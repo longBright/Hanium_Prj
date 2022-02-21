@@ -1,0 +1,194 @@
+※ 신용진
+# 기술 스택
+      사용 언어 : JAVA or Kotlin or Flutter, C++, Python, XML
+   - JAVA : 가장 접근성이 쉬움, 오래된 언어
+             - Kotlin : JAVA에 비해 최근 언어, 대다수의 AOS 개발자들이 사용중
+             - Flutter : AOS, IOS 둘 다 가능한 App 개발 가능, JAVA,Kotlin에 비해 배우기는 어려울 것이라 예상 됨  
+   - C++ : 영상처리 시 사용(Android NDK) 
+   - Python : AI 모델 구성 시 사용, 영상처리 시 사용 
+   - XML : App 기초 디자인 
+    데이터베이스(DB) : FireBase, SQLite
+   - FireBase : Google에서 제공하는 DB, Realtime DB 사용 시 사용 할 것이라 예상
+   - SQLite : Android Studio 내장 DB, 간단한 데이터 저장 시 사용 할 것이라 예상
+      운영체제(OS) : AOS (IOS)
+   - AOS로 예상 됨 (Flutter 사용 시 IOS까지 가능)
+      클라우드 서버 :  FireBase
+   - FireBase를 통해 서버 관리 가능
+      개발도구(IDE) : Android Studio Bumblebee | 2021.1.1 Patch 
+   - Android Studio 버전이 다르면 호환이 되지 않는 경우가 있어 버전 통일 중요
+      형상관리(SCM) : Github
+
+   # 사용 기술 관련 라이브러리 & API
+      웹 크롤링 - Jsoup, Json
+   - Jsoup : HTML 파싱
+   - JSON : API 파싱 할 때 사용할 듯
+      API - NAVER 쇼핑(https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md)
+      -> 최저가 비교 시 API 사용
+      영상처리 - Android NDK + OpenCV
+   - OpenCV 라이브러리를 사용하여 영상처리
+   - Android NDK가 C++ 사용 가능하게 해줌
+      AR - ARCore
+   - AR 사용하여 마스크 착용 시 이미지 보여줌 
+      AI(추천 기능) - Tensorflow Lite
+   - Tensorflow Lite를 활용하여 모델 사용
+
+   # 유사작품(어플이어도 좋고, 다 상관 없음)
+      -  핏앤샵 (가상 피팅 앱)
+      -  라운즈 - (실시간 가상피팅 안경/선글라스 쇼핑앱)
+
+
+※ 오정은
+# 기술 스택
+     사용 언어 : JAVA / Kotlin / Flutter, C++, Python, XML
+   - JAVA : 가장 접근성이 쉬움, 오래된 언어
+    - Kotlin : JAVA 플랫폼에서 돌아가며 JAVA에 비해 최신 언어, 
+      VM 없는 환경에서 역할을 수행하고 구동할 수 있기 때문에 자바나 자바스크립트보다 좀 더 범용적으로 적용,
+      대다수의 AOS 개발자들이 사용중
+      - Flutter : AOS, IOS 둘 다 가능한 App 개발 가능, JAVA, Kotlin에 비해 배우기는 어려울 것으로 예상  
+    - C++ : 영상처리 시 사용(Android NDK) 
+     - Python : AI 모델 구성 시 사용, 영상처리 시 사용 
+    - XML : App 기초 디자인 
+    
+     데이터베이스(DB) : FireBase, SQLite
+    - FireBase : Google에서 제공하는 DB, Realtime DB 사용 시 사용 할 것으로 예상
+    - SQLite : Android Studio 내장 DB, 간단한 데이터 저장 시 사용 할 것으로 예상
+      
+     운영체제(OS) : AOS/IOS
+    - AOS (Flutter 사용 시 IOS까지 가능)
+      
+     클라우드 서버 : FireBase
+    - FireBase를 통해 서버 관리 가능
+      
+     개발도구(IDE) : Android Studio Arctic Fox | 2020.3.1 Patch , 
+      Android Studio Bumblebee | 2021.1.1 Patch ,
+      Andriod Studio CHipmunk | 2021.2.1 Patch 
+    - Android Studio 버전이 다르면 호환이 되지 않는 경우가 있어 버전 통일 중요
+      
+     형상관리(SCM) : Github
+
+   # 사용 기술 관련 라이브러리 & API
+     웹 크롤링 - Jsoup, BeautifulSoup, Json, XML
+    - Jsoup : HTML 파싱
+     - BeautifulSoup : HTML 파싱(파이썬 라이브러리)
+       - JSON : API 파싱 할 때 사용할 듯
+      - XML : XML 파싱을 통해 API 형태의 데이터 추출
+    
+     API - NAVER 쇼핑(https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md)
+              -> 최저가 비교 시 API 사용
+      
+    영상처리 - Android NDK + OpenCV
+     - OpenCV : C/C++, Python, Java, c# 등 여러 언어 사용
+                  이미지, 영상처리 등 다양한 기능을 제공 
+        - Android NDK : Android에서 c 및 c++코드를 사용할 수 있게 해주는 일련의 도구 모음
+    
+      AR - ARCore , Unity AR Foundation 
+      -> AR 사용하여 마스크 착용 시 이미지 보여줌 
+    - ARCore : 구글이 내놓은 AR 개발 API (Android 용)
+             (*ARKit : 애플이 내놓은 AR 개발 API(IOS 용))
+       - Unity AR Foundation : c# 사용, 하나의 코드로 Android + IOS용 앱으로 쉽게 빌드할 수 있다는 것이 장점, 
+                                             하지만 ARCore의 기능을 100%로 사용할 수 없음 
+      
+     AI(추천 기능) - Tensorflow Lite
+     - Tensorflow Lite를 활용하여 모델 사용
+
+   # 유사작품(어플이어도 좋고, 다 상관 없음)
+      -  핏앤샵 (가상 피팅 앱)
+      -  라운즈 (실시간 가상피팅 안경/선글라스 쇼핑 앱)
+      -  헤어핏 (헤어스타일 가상 체험 앱) 
+      -  픽네일 (가상피팅 네일쇼핑몰 모음 앱)
+      -  핑킹    (컬러렌즈, 립스틱 등 뷰티 제품 가상 피팅 앱)
+
+※ 황유현
+# 기술 스택
+      사용 언어 : JAVA or Kotlin or Flutter, C++, Python, XML
+   - JAVA : 가장 접근성이 쉬움, 오래된 언어
+   - Kotlin : JAVA에 비해 최근 언어, 대다수의 AOS 개발자들이 사용중
+    - Flutter : AOS, IOS 둘 다 가능한 App 개발 가능, JAVA,Kotlin에 비해 배우기는 어려울 것이라 예상 됨  
+   - C++ : 영상처리 시 사용(Android NDK) 
+   - Python : AI 모델 구성 시 사용, 영상처리 시 사용 
+   - XML : App 기초 디자인 
+    데이터베이스(DB) : FireBase, SQLite
+   - FireBase : Google에서 제공하는 DB, Realtime DB 사용 시 사용 할 것이라 예상
+   - SQLite : Android Studio 내장 DB, 간단한 데이터 저장 시 사용 할 것이라 예상
+      운영체제(OS) : AOS (IOS)
+   - AOS로 예상 됨 (Flutter 사용 시 IOS까지 가능)
+      클라우드 서버 :  FireBase
+   - FireBase를 통해 서버 관리 가능
+      개발도구(IDE) : Android Studio Bumblebee | 2021.1.1 Patch 
+   - Android Studio 버전이 다르면 호환이 되지 않는 경우가 있어 버전 통일 중요
+      형상관리(SCM) : Github
+
+   # 사용 기술 관련 라이브러리 & API
+      웹 크롤링 - Jsoup, BeautifulSoup, Json, XML
+   - Jsoup : HTML 파싱 (Java 라이브러리)
+   - BeautifulSoup : HTML 파싱(파이썬 라이브러리)
+   - JSON : API 파싱 할 때 사용할 듯
+   - XML : XML 파싱을 통해 API 형태의 데이터 추출  
+      API - NAVER 쇼핑(https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md)
+      -> 최저가 비교 시 API 사용
+      영상처리 - Android NDK + OpenCV
+   - OpenCV : C/C++, Python, Java, c# 등 여러 언어 사용
+                  이미지, 영상처리 등 다양한 기능을 제공 
+   - Android NDK : Android에서 c 및 c++코드를 사용할 수 있게 해주는 일련의 도구 모음 
+      AR - ARCore , Unity AR Foundation 
+   - AR 사용하여 마스크 착용 시 이미지 보여줌 
+   - ARCore : 구글이 내놓은 AR 개발 API (Android 용)
+   (*ARKit : 애플이 내놓은 AR 개발 API(IOS 용))
+   - Unity AR Foundation : c# 사용, 하나의 코드로 Android + IOS용 앱으로 쉽게 빌드할 수 있다는 것이 장점 
+                                  하지만 ARCore의 기능을 100%로 사용할 수 없음 
+      AI(추천 기능) - Tensorflow Lite
+   - Tensorflow Lite를 활용하여 모델 사용
+
+   # 유사작품(어플이어도 좋고, 다 상관 없음)
+      -  핏앤샵 (가상 피팅 앱)
+      -  라운즈 - (실시간 가상피팅 안경/선글라스 쇼핑앱)
+      -  글라스 매치 - 얼굴에 맞는 안경을 AI로 추천/ 여러 각도로 확인 가능
+
+※ 강희정
+- 개발 기획 세부
+   # 기술 스택
+     사용 언어 : 
+-   Java(안드로이드 스튜디오 지원) : 안드로이드 공식 언어, 오픈소스 자료가 다양, UI 디자이너도 통합 되어있어 XML을 안 써도 화면 설계가 가능, 학습이 어렵고, 작성된 코드가 많을수록 에러 발생 확률이 높은 단점
+-   Kotlin(안드로이드 스튜디오 지원) : 최근에 나온 프로그래밍 언어, 자바보다 쉽고 간단, 안드로이드 앱을 만들기 위해 나온 언어라서 높은 안정성, 최근 구글에서 밀어주고 있는 언어(전망이 좋은 언어)
+-   C/C++ : 다른 언어에 비해 코딩이 복잡하지만 매우 유연하다는 장점, 라이브러리가 다양
+-   Python : 다량의 데이터와 머신 러닝을 활용할 때 사용, 영상처리 시 사용 
+-   XML : App 기초 디자인
+
+      데이터베이스(DB) : 
+-   FireBase : Google에서 제공하는 DB, Realtime DB 사용 시 사용 할 것이라 예상
+-   SQLite : 소규모 데이터를 관리하고 사용하는데 적합한 관계형 데이터베이스(속도가 빠르고 가벼움), Android Studio 내장 DB, 간단한 데이터 저장 시 사용 할 것이라 예상
+-   Realm : 모바일 환경을 주요 타깃으로 삼은 데이터베이스, 직관적인 사용가능, 데이터 처리 속도 향상된 장점, 사용법에 대해 조금 더 공부를 해야 하는 단점
+추가정리 내용 : https://velog.io/@jojo_devstory/Android-Realm%EC%9D%B4%EB%9E%80-SQLite%EB%B3%B4%EB%8B%A4-%EC%A2%8B%EB%8B%A4%EB%8D%98%EB%8D%B0
+
+      운영체제(OS) : 
+-   AOS로 예상 됨 (Flutter 사용 시 IOS까지 가능)
+
+      클라우드 서버 :
+   - FireBase를 통해 서버 관리 가능
+개발도구(IDE) : Android Studio Bumblebee | 2021.1.1 Patch 
+-   Android Studio 버전이 다르면 호환이 되지 않는 경우가 있어 버전 통일 중요
+      형상관리(SCM) : Github
+
+   # 사용 기술 관련 라이브러리 & API
+     웹 크롤링 – 
+-   Jsoup : html, xml 등을 파싱하는 자바 라이브러리
+-   JSON : API 파싱 할 때 사용할 듯
+-   XML : XML 파싱을 통해 API 형태의 데이터 추출
+API - NAVER 쇼핑(https://developers.naver.com/docs/serviceapi/search/shopping/shopping.md)
+-> 최저가 비교 시 API 사용
+      영상처리 –
+- OpenCV : C/C++, Python, Java, c# 등 여러 언어 사용
+                  이미지, 영상처리 등 다양한 기능을 제공 
+   - Android NDK : Android에서 c 및 c++코드를 사용할 수 있게 해주는 일련의 도구 모음
+      AR - AR 사용하여 마스크 착용 시 이미지 보여줌
+- ARCore : 구글이 내놓은 AR 개발 API (Android 용)
+   (*ARKit : 애플이 내놓은 AR 개발 API(IOS 용))
+   - Unity AR Foundation : c# 사용, 하나의 코드로 Android + IOS용 앱으로 쉽게 빌드할 수 있다는 것이 장점 하지만 ARCore의 기능을 100%로 사용할 수 없음
+      AI(추천 기능) - Tensorflow Lite
+-   Tensorflow Lite를 활용하여 모델 사용
+
+   # 유사작품(어플이어도 좋고, 다 상관 없음)
+-   마스크 매니저(마스크 관리 앱)
+-   P.Cle (3D로 옷을 입히고 커스텀)
+-   라운즈(실시간 가상피팅 안경/선글라스 쇼핑 앱, 얼굴형 분석, 개인맞춤 추천)
+-   https://www.mask.shopping/mask/news (마스크 쇼핑 한번에 볼 수 있는 페이지), (실시간 채팅을 통해서 마스크 정보 공유 가능, 마스크 관련 기사를 실시간으로 보여줌, 실시간 인기 키워드 확인 가능)
