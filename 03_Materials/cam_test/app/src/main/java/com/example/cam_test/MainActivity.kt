@@ -114,6 +114,7 @@ class MainActivity : AppCompatActivity() {
         btn_convert.setOnClickListener { switchCamera() }
     }
 
+    // 전면 후면 카메라 전환
     private fun switchCamera() {
         when(mCameraId){
             CAMERA_BACK -> {
@@ -130,6 +131,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    // 카메라 및 프리뷰 초기화
     fun initCameraAndPreview() {
         val handlerThread = HandlerThread("CAMERA2")
         handlerThread.start()
@@ -138,6 +140,7 @@ class MainActivity : AppCompatActivity() {
         openCamera()
     }
 
+    // 카메라 연결
     private fun openCamera() {
         try {
             val mCameraManager = this.getSystemService(Context.CAMERA_SERVICE) as CameraManager
