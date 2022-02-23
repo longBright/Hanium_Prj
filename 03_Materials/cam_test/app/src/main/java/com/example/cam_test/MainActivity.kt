@@ -26,6 +26,7 @@ import splitties.toast.toast
 //Camera2 Document: https://developer.android.com/reference/android/hardware/camera2/package-summary
 //Reference: https://webnautes.tistory.com/822
 class MainActivity : AppCompatActivity() {
+    // 변수 선언
     private lateinit var mSurfaceViewHolder: SurfaceHolder
     private lateinit var mImageReader: ImageReader
     private lateinit var mCameraDevice: CameraDevice
