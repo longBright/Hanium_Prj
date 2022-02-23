@@ -80,12 +80,14 @@ class MainActivity : AppCompatActivity() {
         initView()
     }
 
+    // 센서 초기화
     private fun initSensor() {
         mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         mMagnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
     }
 
+    // SurfaceView 초기화 (화면 초기화)
     private fun initView() {
         with(DisplayMetrics()){
             windowManager.defaultDisplay.getMetrics(this)
@@ -93,16 +95,20 @@ class MainActivity : AppCompatActivity() {
             mWidth = widthPixels
         }
 
+        // SurfaceHolder 연결 및 SurfaceHolder.Callback 인터페이스 구현
         mSurfaceViewHolder = surfaceView.holder
         mSurfaceViewHolder.addCallback(object : SurfaceHolder.Callback {
+            // SurfaceView 생성 시 호출
             override fun surfaceCreated(holder: SurfaceHolder) {
                 initCameraAndPreview()
             }
 
+            // SurfaceView 소멸 시 호출
             override fun surfaceDestroyed(holder: SurfaceHolder) {
                 mCameraDevice.close()
             }
 
+            // SurfaceView 변동(화면 회전 등) 시 호출
             override fun surfaceChanged(
                 holder: SurfaceHolder, format: Int,
                 width: Int, height: Int
@@ -111,10 +117,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        // 전면 후면 카메라 전환 버튼 터치 시 동작 연결
         btn_convert.setOnClickListener { switchCamera() }
     }
 
     // 전면 후면 카메라 전환
+    // 현재 카메라 객체가 전면, 후면인지 확인 후 전환함
     private fun switchCamera() {
         when(mCameraId){
             CAMERA_BACK -> {
@@ -133,6 +141,7 @@ class MainActivity : AppCompatActivity() {
 
     // 카메라 및 프리뷰 초기화
     fun initCameraAndPreview() {
+        // CAMERA2 재시작
         val handlerThread = HandlerThread("CAMERA2")
         handlerThread.start()
         mHandler = Handler(handlerThread.looper)
@@ -140,7 +149,7 @@ class MainActivity : AppCompatActivity() {
         openCamera()
     }
 
-    // 카메라 연결
+    // 카메라 호출
     private fun openCamera() {
         try {
             val mCameraManager = this.getSystemService(Context.CAMERA_SERVICE) as CameraManager
@@ -148,14 +157,16 @@ class MainActivity : AppCompatActivity() {
             val map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP)
 
             val largestPreviewSize = map!!.getOutputSizes(ImageFormat.JPEG)[0]
-            setAspectRatioTextureView(largestPreviewSize.height, largestPreviewSize.width)
+            setAspectRatioTextureView(largestPreviewSize.height, largestPreviewSize.width)      // 화면 비율 설정
 
+            // 이미지의 가로, 세로, 확장자 지정
             mImageReader = ImageReader.newInstance(
                 largestPreviewSize.width,
                 largestPreviewSize.height,
                 ImageFormat.JPEG,
                 7
             )
+            // 허가를 받지 못한 경우 종료 후 재호출
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED
             ) return
@@ -166,8 +177,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // 카메라 상태 Callback 함수 정의
     private val deviceStateCallback = object : CameraDevice.StateCallback() {
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+        // 생성 시
         override fun onOpened(camera: CameraDevice) {
             mCameraDevice = camera
             try {
@@ -177,15 +190,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // 소멸 시
         override fun onDisconnected(camera: CameraDevice) {
             mCameraDevice.close()
         }
 
+        // 에러 발생
         override fun onError(camera: CameraDevice, error: Int) {
             toast("카메라를 열지 못했습니다.")
         }
     }
 
+    // 카메라의 출력을 어디로 보낼 것인지 설정
     @Throws(CameraAccessException::class)
     fun takePreview() {
         mPreviewBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW)
@@ -195,6 +211,7 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    // 카메라 프리뷰 상태 Callback
     private val mSessionPreviewStateCallback = object : CameraCaptureSession.StateCallback() {
         override fun onConfigured(session: CameraCaptureSession) {
             mSession = session
@@ -222,6 +239,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // 앱 재시작 시
     override fun onResume() {
         super.onResume()
 
@@ -233,11 +251,13 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    // 앱 정지 시
     override fun onPause() {
         super.onPause()
         mSensorManager.unregisterListener(deviceOrientation.eventListener)
     }
 
+    // TextureView 으 화면 비율 설정
     private fun setAspectRatioTextureView(ResolutionWidth: Int, ResolutionHeight: Int) {
         if (ResolutionWidth > ResolutionHeight) {
             val newWidth = mWidth
@@ -252,6 +272,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // 화면 비율 갱신
     private fun updateTextureViewSize(viewWidth: Int, viewHeight: Int) {
         Log.d("ViewSize", "TextureView Width : $viewWidth TextureView Height : $viewHeight")
         surfaceView.layoutParams = FrameLayout.LayoutParams(viewWidth, viewHeight)

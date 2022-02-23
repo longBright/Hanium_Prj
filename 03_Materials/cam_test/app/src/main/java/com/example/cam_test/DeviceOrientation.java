@@ -21,6 +21,7 @@ public class DeviceOrientation {
     private float[] pitches;
     private float[] rolls;
 
+    // 객체 생성
     public DeviceOrientation() {
         pitches = new float[smoothness];
         rolls = new float[smoothness];
@@ -36,6 +37,7 @@ public class DeviceOrientation {
 
 
 
+    // 센서 이벤트 리스너
     SensorEventListener sensorEventListener = new SensorEventListener() {
         float[] mGravity;
         float[] mGeomagnetic;
