@@ -2,11 +2,7 @@ package kr.ac.skuniv.apinew
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Message
 import android.view.View
-import android.widget.EditText
-import android.widget.TextView
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
@@ -15,7 +11,6 @@ import java.lang.StringBuilder
 import java.net.HttpURLConnection
 import java.net.MalformedURLException
 import java.net.URL
-import java.net.URLEncoder
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +29,7 @@ class MainActivity : AppCompatActivity() {
              throw RuntimeException("검색어 인코딩 실패", e)
          }*/
         //text = "마스크"
-        btn_mask.setOnClickListener {   // 버튼 클릭 시 thread start
+        btn_mask.setOnClickListener { view: View ->   // 버튼 클릭 시 thread start
 
             var str_mask = edit_mask.text.toString()    // edit text에 적힌 값을 검색 키 값으로
 
