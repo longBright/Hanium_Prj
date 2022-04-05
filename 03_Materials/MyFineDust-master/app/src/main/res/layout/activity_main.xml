@@ -25,10 +25,10 @@
             android:visibility="gone" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainlayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0"
-            android:id="@+id/mainlayout"
             tools:context=".MainActivity">
 
             <TextView
@@ -104,46 +104,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fineDustInfoTextView" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginVertical="10dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="@id/lowerDivider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/upperDivider">
-
-                <include
-                    android:id="@+id/s02Item"
-                    layout="@layout/view_measured_item"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <include
-                    android:id="@+id/coItem"
-                    layout="@layout/view_measured_item"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <include
-                    android:id="@+id/o3Item"
-                    layout="@layout/view_measured_item"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <include
-                    android:id="@+id/no2Item"
-                    layout="@layout/view_measured_item"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
             <View
                 android:id="@+id/lowerDivider"
                 android:layout_width="0dp"
@@ -188,6 +148,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/RecomMask"
+                android:layout_width="366dp"
+                android:layout_height="285dp"
+                android:text="TextView"
+                tools:layout_editor_absoluteX="23dp"
+                tools:layout_editor_absoluteY="325dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
