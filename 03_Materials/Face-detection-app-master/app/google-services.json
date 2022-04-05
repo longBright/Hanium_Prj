@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "140594112897",
+    "project_id": "facedetect-cb1b9",
+    "storage_bucket": "facedetect-cb1b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140594112897:android:030b3bc7f69e5b77002080",
+        "android_client_info": {
+          "package_name": "com.smartphotography.facedetector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140594112897-l0smpp3102aap76cceb6eurp9ah107ja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSAxeKYagU4quDBn5Xo4VoSjc0zcM2rZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140594112897-l0smpp3102aap76cceb6eurp9ah107ja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
