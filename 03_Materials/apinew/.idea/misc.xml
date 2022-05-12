@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ShinYongJin/AndroidStudioProjects/apinew/app/src/main/res/layout/activity_main.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/ShinYongJin/AndroidStudioProjects/apinew/app/src/main/res/layout/sub_activity.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/biggoony/Desktop/Project/Hanium_Projects/2022_Hanium/Hanium_Prj/03_Materials/apinew/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
