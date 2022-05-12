@@ -34,7 +34,7 @@ class CameraManager(    //카메라 관리 클래스
     private var imageAnalyzer: ImageAnalysis? = null
 
 
-    // default barcode scanner
+    // default : barcode scanner
     private var analyzerVisionType: VisionType = VisionType.Barcode
 
     lateinit var cameraExecutor: ExecutorService
@@ -42,16 +42,18 @@ class CameraManager(    //카메라 관리 클래스
     lateinit var metrics: DisplayMetrics
 
     var rotation: Float = 0f
-    var cameraSelectorOption = CameraSelector.LENS_FACING_BACK
+    var cameraSelectorOption = CameraSelector.LENS_FACING_BACK      // default : 후면 카메라
 
     init {
         createNewExecutor()
     }
 
+    // 새로운 실행자 생성
     private fun createNewExecutor() {
         cameraExecutor = Executors.newSingleThreadExecutor()
     }
 
+    // Image Analyzer 의 타입을 설정함. 우리 프로젝트에서 사용되는 부분은 Face 부분.
     private fun selectAnalyzer(): ImageAnalysis.Analyzer {
         return when (analyzerVisionType) {
             VisionType.Object -> ObjectDetectionProcessor(graphicOverlay)
@@ -61,12 +63,13 @@ class CameraManager(    //카메라 관리 클래스
         }
     }
 
-    private fun setCameraConfig(    // 바인딩 해제
+    // 카메라 설정
+    private fun setCameraConfig(
         cameraProvider: ProcessCameraProvider?,
         cameraSelector: CameraSelector
     ) {
         try {
-            cameraProvider?.unbindAll()
+            cameraProvider?.unbindAll()     // 바인딩 해제
             camera = cameraProvider?.bindToLifecycle(
                 lifecycleOwner,
                 cameraSelector,
@@ -82,6 +85,7 @@ class CameraManager(    //카메라 관리 클래스
         }
     }
 
+    // 화면 Zoom(확대 및 축소) 기능
     private fun setUpPinchToZoom() {
         val listener = object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
             override fun onScale(detector: ScaleGestureDetector): Boolean {
@@ -100,12 +104,13 @@ class CameraManager(    //카메라 관리 클래스
         }
     }
 
+    // 카메라 시작
     fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(context)
         cameraProviderFuture.addListener(
             Runnable {
                 cameraProvider = cameraProviderFuture.get()
-                preview = Preview.Builder().build()
+                preview = Preview.Builder().build()     // 카메라 프리뷰
 
                 imageAnalyzer = ImageAnalysis.Builder() //  원하는 analyzer 넣기
                     .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
@@ -132,6 +137,7 @@ class CameraManager(    //카메라 관리 클래스
         )
     }
 
+    // 전/후면 카메라 전환
     fun changeCameraSelector() {
         cameraProvider?.unbindAll()
         cameraSelectorOption =
@@ -141,18 +147,21 @@ class CameraManager(    //카메라 관리 클래스
         startCamera()
     }
 
+    // Image Analyzer 교체
     fun changeAnalyzer(visionType: VisionType) {
         if (analyzerVisionType != visionType) {
             cameraProvider?.unbindAll()
             analyzerVisionType = visionType
-            startCamera()
+            startCamera()       // 카메라 재시작
         }
     }
 
+    // 가로모드
     fun isHorizontalMode() : Boolean {
         return rotation == 90f || rotation == 270f
     }
 
+    // 전면 카메라 사용
     fun isFrontMode() : Boolean {
         return cameraSelectorOption == CameraSelector.LENS_FACING_FRONT
     }
