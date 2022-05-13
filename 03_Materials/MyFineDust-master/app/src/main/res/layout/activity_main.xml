@@ -165,19 +165,35 @@
 
             <Button
                 android:id="@+id/TextButton1"
-                android:layout_width="362dp"
-                android:layout_height="50dp"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
                 android:text="마스크 착용해보기"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="13sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/additionalInfoTextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintHorizontal_bias="0.923"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/RecomMask"
-                app:layout_constraintVertical_bias="0.496" />
+                app:layout_constraintVertical_bias="0.603" />
+
+            <Button
+                android:id="@+id/TextButton2"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:text="마스크 추천받기"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/additionalInfoTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.114"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/RecomMask"
+                app:layout_constraintVertical_bias="0.603" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
