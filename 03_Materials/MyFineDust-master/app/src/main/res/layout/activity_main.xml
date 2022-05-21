@@ -151,8 +151,8 @@
 
             <TextView
                 android:id="@+id/RecomMask"
-                android:layout_width="367dp"
-                android:layout_height="155dp"
+                android:layout_width="370dp"
+                android:layout_height="190dp"
                 android:text="미측정"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -194,6 +194,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/RecomMask"
                 app:layout_constraintVertical_bias="0.603" />
+
+            <ImageView
+                android:id="@+id/mask_image"
+                android:layout_width="217dp"
+                android:layout_height="119dp"
+                app:layout_constraintBottom_toTopOf="@+id/lowerDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/RecomMask"
+                app:srcCompat="@drawable/dental" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

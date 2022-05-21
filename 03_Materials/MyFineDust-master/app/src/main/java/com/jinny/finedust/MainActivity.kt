@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
             } else if (pm10Grade?.label.equals("나쁨")) {
                 binding.RecomMask.text = "KF 80"
             }else if (pm10Grade?.label.equals("매우 나쁨")) {
-                    binding.RecomMask.text = "KF 80"
+                    binding.RecomMask.text = "KF 94"
                 }
             else
                 binding.RecomMask.text = "미측정"
