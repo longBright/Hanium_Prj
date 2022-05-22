@@ -126,12 +126,15 @@ class MainActivity : AppCompatActivity() {
             //---------------------마스크 추천-------------------------------------------
 
             if (pm10Grade?.label.equals("좋음") || pm10Grade?.label.equals("보통")) { //좋음이거나 보통
-                binding.RecomMask.text = "덴탈 마스크 / 미착용"
+                binding.RecomMask.text = "덴탈 마스크 / 미착용"                         //마스크 텍스트
+                binding.maskImage.setImageResource(R.drawable.dental)                //마스크 이미지
             } else if (pm10Grade?.label.equals("나쁨")) {
                 binding.RecomMask.text = "KF 80"
+                binding.maskImage.setImageResource(R.drawable.kf)
             }else if (pm10Grade?.label.equals("매우 나쁨")) {
                     binding.RecomMask.text = "KF 94"
-                }
+                    binding.maskImage.setImageResource(R.drawable.kf)
+            }
             else
                 binding.RecomMask.text = "미측정"
         }
