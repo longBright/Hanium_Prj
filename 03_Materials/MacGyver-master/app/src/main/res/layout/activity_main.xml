@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:bind="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,12 +10,10 @@
             type="github.hongbeomi.macgyver.ui.main.MainViewModel" />
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.main.MainActivity">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="1055dp"
+        android:layout_height="1550dp"
+        bind:context=".ui.main.MainActivity">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -64,14 +64,14 @@
             android:id="@+id/imageButton_shutter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="120dp"
+            android:backgroundTint="@android:color/transparent"
             android:clickable="true"
             android:focusable="true"
             android:onClick="@{viewModel::onClickShutter}"
-            android:src="@drawable/ic_shutter"
-            android:layout_gravity="end|bottom"
-            android:layout_marginBottom="120dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@android:color/transparent" />
+            android:src="@drawable/ic_shutter" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

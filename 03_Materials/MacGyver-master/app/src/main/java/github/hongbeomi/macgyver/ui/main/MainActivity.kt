@@ -23,6 +23,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
 
+    // binding 사용을 통해 view 접근
     private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
     private val viewModel: MainViewModel by viewModel()
     private lateinit var cameraManager: CameraManager
