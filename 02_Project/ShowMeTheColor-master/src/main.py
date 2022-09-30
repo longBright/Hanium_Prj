@@ -44,9 +44,7 @@ def re():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
-    #run_simple('0.0.0.0', 5000, app)
-    #app.run()
+    app.run(host='0.0.0.0', port=5000)
 
 
 
