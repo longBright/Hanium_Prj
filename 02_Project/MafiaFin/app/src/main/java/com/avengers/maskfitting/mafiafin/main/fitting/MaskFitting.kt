@@ -7,6 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.avengers.maskfitting.mafiafin.databinding.FragmentMaskFittingNewBinding
+import com.avengers.maskfitting.mafiafin.main.fitting.bird.FaceLandmarksActivityBird
+import com.avengers.maskfitting.mafiafin.main.fitting.bird.FaceLandmarksActivityBird_Black
+import com.avengers.maskfitting.mafiafin.main.fitting.bird.FaceLandmarksActivityBird_Pink
+import com.avengers.maskfitting.mafiafin.main.fitting.dental.FaceLandmarksActivity
+import com.avengers.maskfitting.mafiafin.main.fitting.dental.FaceLandmarksActivityBlack
+import com.avengers.maskfitting.mafiafin.main.fitting.dental.FaceLandmarksActivityPink
+import com.avengers.maskfitting.mafiafin.main.fitting.kf.FaceLandmarksActivityKF
+import com.avengers.maskfitting.mafiafin.main.fitting.kf.FaceLandmarksActivityKFBlack
+import com.avengers.maskfitting.mafiafin.main.fitting.kf.FaceLandmarksActivityKFPink
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,14 +52,14 @@ class Mask_fitting : Fragment() {
         binding.imagebtn1.setOnClickListener{
             maskNum =1
 
-            val intent = Intent(activity, FaceLandmarksActivity::class.java)
+            val intent = Intent(activity, com.avengers.maskfitting.mafiafin.main.fitting.dental.FaceLandmarksActivity::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn2.setOnClickListener{
             maskNum = 2
-            val intent = Intent(activity, FaceLandmarksActivityKF::class.java)
+            val intent = Intent(activity, com.avengers.maskfitting.mafiafin.main.fitting.kf.FaceLandmarksActivityKF::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
 
@@ -58,45 +67,45 @@ class Mask_fitting : Fragment() {
 
         binding.imagebtn3.setOnClickListener{
             maskNum = 3
-            val intent = Intent(activity, FaceLandmarksActivityBird::class.java)
+            val intent = Intent(activity, com.avengers.maskfitting.mafiafin.main.fitting.bird.FaceLandmarksActivityBird::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn4.setOnClickListener{
             maskNum = 4
-            val intent = Intent(activity, FittingActivity::class.java)
+            val intent = Intent(activity, com.avengers.maskfitting.mafiafin.main.fitting.dental.FaceLandmarksActivityBlack::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn5.setOnClickListener{
             maskNum = 5
-            val intent = Intent(activity, FittingActivity::class.java)
+            val intent = Intent(activity, com.avengers.maskfitting.mafiafin.main.fitting.kf.FaceLandmarksActivityKFBlack::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn6.setOnClickListener{
-            val intent = Intent(activity, FittingActivity::class.java)
+            val intent = Intent(activity, com.avengers.maskfitting.mafiafin.main.fitting.bird.FaceLandmarksActivityBird_Black::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn7.setOnClickListener{
-            val intent = Intent(activity, FittingActivity::class.java)
+            val intent = Intent(activity, com.avengers.maskfitting.mafiafin.main.fitting.dental.FaceLandmarksActivityPink::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn8.setOnClickListener{
-            val intent = Intent(activity, FittingActivity::class.java)
+            val intent = Intent(activity, com.avengers.maskfitting.mafiafin.main.fitting.kf.FaceLandmarksActivityKFPink::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn9.setOnClickListener{
-            val intent = Intent(activity, FittingActivity::class.java)
+            val intent = Intent(activity, com.avengers.maskfitting.mafiafin.main.fitting.bird.FaceLandmarksActivityBird_Pink::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }

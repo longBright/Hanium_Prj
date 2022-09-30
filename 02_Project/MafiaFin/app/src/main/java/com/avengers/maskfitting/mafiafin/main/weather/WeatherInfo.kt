@@ -14,7 +14,7 @@ import android.widget.Toast
 
 import com.avengers.maskfitting.mafiafin.R
 import com.avengers.maskfitting.mafiafin.databinding.FragmentWeatherinfoBinding
-import com.avengers.maskfitting.mafiafin.main.fitting.FittingActivity
+import com.avengers.maskfitting.mafiafin.main.fitting.dental.FaceLandmarksActivity
 import com.avengers.maskfitting.mafiafin.main.weather.model.airQuality.Grade
 import com.avengers.maskfitting.mafiafin.main.weather.model.airQuality.MeasuredValue
 import com.avengers.maskfitting.mafiafin.main.weather.model.nearbycenter.Station
@@ -87,7 +87,7 @@ class WeatherInfo : Fragment() {
         // 가상피팅 버튼
         binding.FittingBtn.setOnClickListener{
             // 가상피팅 프래그먼트로 전환
-            val intent_2 = Intent(activity, FittingActivity::class.java)
+            val intent_2 = Intent(activity, FaceLandmarksActivity::class.java)
             startActivity(intent_2)
         }
         return binding.root

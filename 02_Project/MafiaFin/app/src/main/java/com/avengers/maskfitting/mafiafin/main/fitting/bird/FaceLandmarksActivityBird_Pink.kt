@@ -1,4 +1,4 @@
-package com.avengers.maskfitting.mafiafin.main.fitting
+package com.avengers.maskfitting.mafiafin.main.fitting.bird
 
 import android.app.ActivityManager
 import android.content.Context
@@ -7,19 +7,20 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.avengers.maskfitting.mafiafin.R
+import com.avengers.maskfitting.mafiafin.main.fitting.FaceArFragment
 import com.google.ar.core.ArCoreApk
 import com.google.ar.core.AugmentedFace
 import com.google.ar.core.TrackingState
 import com.google.ar.sceneform.rendering.Renderable
 import kotlinx.android.synthetic.main.activity_regions.*
 
-class FaceLandmarksActivity : AppCompatActivity() {
+class FaceLandmarksActivityBird_Pink : AppCompatActivity() {
     companion object {
         const val MIN_OPENGL_VERSION = 3.0
     }
 
     lateinit var arFragment: FaceArFragment
-    var faceNodeMap = HashMap<AugmentedFace, CustomFaceNode>()
+    var faceNodeMap = HashMap<AugmentedFace, CustomFaceNodeBird_pink>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +31,7 @@ class FaceLandmarksActivity : AppCompatActivity() {
         setContentView(R.layout.activity_regions)
         arFragment = face_fragment as FaceArFragment
 
-        button_refresh.visibility = View.GONE
+
 
         val sceneView = arFragment.arSceneView
         sceneView.cameraStreamRenderPriority = Renderable.RENDER_PRIORITY_FIRST
@@ -41,7 +42,7 @@ class FaceLandmarksActivity : AppCompatActivity() {
                 ?.getAllTrackables(AugmentedFace::class.java)?.let {
                     for (f in it) {
                         if (!faceNodeMap.containsKey(f)) {
-                            val faceNode = CustomFaceNode(f, this)
+                            val faceNode = CustomFaceNodeBird_pink(f, this)
                             faceNode.setParent(scene)
                             faceNodeMap.put(f, faceNode)
                         }

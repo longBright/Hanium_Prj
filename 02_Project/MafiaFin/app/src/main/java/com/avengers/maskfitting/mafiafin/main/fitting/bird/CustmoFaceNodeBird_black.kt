@@ -1,4 +1,4 @@
-package com.avengers.maskfitting.mafiafin.main.fitting
+package com.avengers.maskfitting.mafiafin.main.fitting.bird
 
 import android.content.Context
 import android.content.Intent.getIntent
@@ -13,8 +13,8 @@ import com.google.ar.sceneform.rendering.ViewRenderable
 import com.google.ar.sceneform.ux.AugmentedFaceNode
 import com.avengers.maskfitting.mafiafin.main.fitting.Mask_fitting
 
-class CustomFaceNodeKF(augmentedFace: AugmentedFace?,
-                     val context: Context
+class CustomFaceNodeBird_black(augmentedFace: AugmentedFace?,
+                         val context: Context
 ): AugmentedFaceNode(augmentedFace) {
 
 
@@ -66,7 +66,7 @@ class CustomFaceNodeKF(augmentedFace: AugmentedFace?,
 
 
 
-                uiRenderable.view.findViewById<ImageView>(R.id.activity_img).setImageResource(R.drawable.kfmask)
+                uiRenderable.view.findViewById<ImageView>(R.id.activity_img).setImageResource(R.drawable.bird_black)
             }
             .exceptionally { throwable: Throwable? ->
                 throw AssertionError(
@@ -109,7 +109,7 @@ class CustomFaceNodeKF(augmentedFace: AugmentedFace?,
             }
 
             getRegionPose(FaceRegion.MUSTACHE)?.let {
-                mustacheNode?.localPosition = Vector3(it.x, it.y - 0.075f, it.z + 0.020f)
+                mustacheNode?.localPosition = Vector3(it.x, it.y - 0.075f, it.z + 0.018f)
                 mustacheNode?.localScale = Vector3(0.075f, 0.075f, 0.075f)
             }
         }

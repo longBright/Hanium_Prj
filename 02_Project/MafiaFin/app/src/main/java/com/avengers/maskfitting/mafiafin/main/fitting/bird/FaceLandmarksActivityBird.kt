@@ -1,4 +1,4 @@
-package com.avengers.maskfitting.mafiafin.main.fitting
+package com.avengers.maskfitting.mafiafin.main.fitting.bird
 
 import android.app.ActivityManager
 import android.content.Context
@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.avengers.maskfitting.mafiafin.R
+import com.avengers.maskfitting.mafiafin.main.fitting.FaceArFragment
 import com.google.ar.core.ArCoreApk
 import com.google.ar.core.AugmentedFace
 import com.google.ar.core.TrackingState
@@ -30,7 +31,7 @@ class FaceLandmarksActivityBird : AppCompatActivity() {
         setContentView(R.layout.activity_regions)
         arFragment = face_fragment as FaceArFragment
 
-        button_refresh.visibility = View.GONE
+
 
         val sceneView = arFragment.arSceneView
         sceneView.cameraStreamRenderPriority = Renderable.RENDER_PRIORITY_FIRST

@@ -56,13 +56,32 @@
             android:name=".account.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".main.fitting.FaceLandmarksActivity"
+            android:name=".main.fitting.dental.FaceLandmarksActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".main.fitting.dental.FaceLandmarksActivityBlack"
             android:exported="true" />
         <activity
-        android:name=".main.fitting.FaceLandmarksActivityKF"
-        android:exported="true" />
+            android:name=".main.fitting.dental.FaceLandmarksActivityPink"
+            android:exported="true" />
         <activity
-            android:name=".main.fitting.FaceLandmarksActivityBird"
+            android:name=".main.fitting.kf.FaceLandmarksActivityKF"
+            android:exported="true" />
+        <activity
+            android:name=".main.fitting.kf.FaceLandmarksActivityKFPink"
+            android:exported="true" />
+        <activity
+            android:name=".main.fitting.kf.FaceLandmarksActivityKFBlack"
+            android:exported="true" />
+        <activity
+            android:name=".main.fitting.bird.FaceLandmarksActivityBird"
+            android:exported="true" />
+        <activity
+            android:name=".main.fitting.bird.FaceLandmarksActivityBird_Black"
+            android:exported="true" />
+        <activity
+            android:name=".main.fitting.bird.FaceLandmarksActivityBird_Pink"
             android:exported="true" />
         <activity
             android:name=".main.alarm.MaskAlertMainActivity"
