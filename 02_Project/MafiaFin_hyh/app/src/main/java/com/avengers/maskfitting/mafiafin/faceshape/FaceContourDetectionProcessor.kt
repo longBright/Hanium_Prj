@@ -1,6 +1,7 @@
 package com.avengers.maskfitting.mafiafin.faceshape
 
 import android.content.Context
+import android.view.View
 import android.graphics.*
 import android.media.Image
 import android.util.Log

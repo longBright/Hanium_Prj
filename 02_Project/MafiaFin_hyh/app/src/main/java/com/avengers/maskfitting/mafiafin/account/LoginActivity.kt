@@ -2,7 +2,6 @@ package com.avengers.maskfitting.mafiafin.account
 
 import android.app.Activity
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -31,7 +30,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
     private var hasSignIn = false
-    private lateinit var preferences: SharedPreferences
 
     override fun onStart() {
         super.onStart()
@@ -39,13 +37,6 @@ class LoginActivity : AppCompatActivity() {
         if (account != null && !hasSignIn){
             hasSignIn = true
             googleSignIn()
-        }
-        // 자동 로그인 여부 확인 후 로그인
-        preferences = getSharedPreferences("userEmail", MODE_PRIVATE)
-        val savedEmail = preferences.getString("email", "").toString()
-        if (savedEmail != "") {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
         }
     }
 
@@ -78,25 +69,21 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.editPw.text.toString()
             val responseListener: Response.Listener<String?> = Response.Listener { response ->
                 try {
-                    val jsonObject = JSONObject(response)
+                    var jsonObject = JSONObject(response)
                     val success = jsonObject.getBoolean("success")
                     if (success) {
-                        // 로그인한 회원 정보 SharedPreference 에 저장
-                        val jsonEmail = jsonObject.getString("email")
-                        val jsonName = jsonObject.getString("name")
-                        val jsonNickname = jsonObject.getString("nickname")
-                        val edit = preferences.edit()
-                        edit.putString("email", jsonEmail)
-                        edit.putString("nickname", jsonNickname)
-                        edit.putString("name", jsonName)
-                        edit.apply()
-
-                        Log.d("LoginActivity", jsonEmail.toString())
-
-                        // 로그인 완료
                         Toast.makeText(this@LoginActivity, "로그인 성공했습니다.", Toast.LENGTH_SHORT).show()
+
+                        val id = jsonObject.getInt("id")
+                        val nickname = jsonObject.getString("nickname")
+                        val name = jsonObject.getString("name")
+
+                        // 로그인한 회원 정보 전송
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
+                        intent.putExtra("id", id)
+                        intent.putExtra("nickname", nickname)
+                        intent.putExtra("name", name)
                     } else {
                         Toast.makeText(this@LoginActivity,
                             "아이디/비밀번호를 다시 확인해주세요.",

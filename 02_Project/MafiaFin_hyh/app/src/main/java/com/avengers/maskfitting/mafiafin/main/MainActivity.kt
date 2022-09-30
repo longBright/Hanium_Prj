@@ -1,14 +1,14 @@
 package com.avengers.maskfitting.mafiafin.main
 
-import android.content.SharedPreferences
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.avengers.maskfitting.mafiafin.R
+import com.avengers.maskfitting.mafiafin.account.LoginActivity
 import com.avengers.maskfitting.mafiafin.databinding.ActivityMainBinding
 import com.avengers.maskfitting.mafiafin.main.fitting.Mask_fitting
-import com.avengers.maskfitting.mafiafin.main.mypage.MyPage
 import com.avengers.maskfitting.mafiafin.main.weather.WeatherInfo
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -18,23 +18,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    lateinit var mGoogleSignInClient: GoogleSignInClient
-    lateinit var preferences: SharedPreferences
-    private var email: String? = ""
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
+    private var hasSignIn: Boolean = false
 
     override fun onStart() {
         super.onStart()
-        // 로그인한 사용자 정보
         val account = this.let { GoogleSignIn.getLastSignedInAccount(it) }
-        if (account != null){
+        if (account != null && !hasSignIn){
             Toast.makeText(this, "Google 계정을 통해 로그인했습니다.", Toast.LENGTH_SHORT).show()
-            Log.d("MainActivity", "${account.email}")
-        }
-
-        email = preferences.getString("email", "")
-        if (email != "") {
-            Toast.makeText(this, "Ma!fia 계정을 통해 로그인했습니다.", Toast.LENGTH_SHORT).show()
-            Log.d("MainActivity", email.toString())
+            hasSignIn = true
+            Log.d("MainActivty", "${account.email}")
         }
     }
 
@@ -48,16 +41,29 @@ class MainActivity : AppCompatActivity() {
             bnv_main.selectedItemId = intent.getIntExtra("Fragment", R.id.first)
         }
 
-        // 로그인 중인 사용자 정보 획득
-        preferences = getSharedPreferences("userEmail", MODE_PRIVATE)
-
-        // GoogleSignInClient 객체 생성
+        // 로그아웃 기능을 위한 GoogleSignInClient 객체 생성
         val gso = GoogleSignInOptions
             .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .build()
 
         mGoogleSignInClient = this.let { GoogleSignIn.getClient(it, gso) }
 
+        // 로그아웃 버튼
+        btn_logout.setOnClickListener {
+            val account = this.let { GoogleSignIn.getLastSignedInAccount(it) }
+            // 구글 로그인인 경우 구글 로그아웃
+            if (account != null ){
+                hasSignIn = false
+                logout()
+            }
+            // 일반 로그인인 경우 그냥 로그아웃
+            else {
+                Toast.makeText(this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, LoginActivity::class.java)
+                hasSignIn = false
+                startActivity(intent)
+            }
+        }
 
         // 하단 탭이 눌렸을 때 화면을 전환하기 위해선 이벤트 처리하기 위해 BottomNavigationView 객체 생성
 
@@ -87,5 +93,16 @@ class MainActivity : AppCompatActivity() {
         }
             selectedItemId = R.id.first
         }
+    }
+
+    // 구글 로그아웃 버튼
+    private fun logout() {
+        mGoogleSignInClient.signOut()
+            .addOnCompleteListener(this) {
+                // 로그아웃 성공시 실행
+                Toast.makeText(this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
     }
 }

@@ -101,12 +101,12 @@
                             android:id="@+id/imagebtn_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/dental_intro" />
+                            android:src="@drawable/ic_android_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="DentalMask"
+                            android:text="mask1"
                             android:textAlignment="center"
                             android:textStyle="bold" />
 
@@ -137,12 +137,12 @@
                             android:id="@+id/imagebtn_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/kf_intro" />
+                            android:src="@drawable/ic_android_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="KF94"
+                            android:text="mask2"
                             android:textAlignment="center"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -170,12 +170,12 @@
                             android:id="@+id/imagebtn_3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/bird_intro" />
+                            android:src="@drawable/ic_android_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Bird"
+                            android:text="mask3"
                             android:textAlignment="center"
                             android:textStyle="bold" />
 

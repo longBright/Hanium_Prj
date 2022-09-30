@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.mypage.MyPage">
+    tools:context=".main.MyPage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,6 +20,7 @@
             android:id="@+id/mypage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="28dp"
@@ -69,12 +70,16 @@
             android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
+            android:layout_gravity="left"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mafia_logo">
+
+
+            //얼굴형
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,10 +89,10 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="160dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
                     android:fontFamily="sans-serif"
                     android:lineSpacingExtra="18sp"
                     android:text="고객님의 얼굴형은"
@@ -99,11 +104,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/face_shape_text_kor"
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="11dp"
+                    android:layout_marginLeft="11dp"
                     android:fontFamily="sans-serif"
                     android:letterSpacing="0.04"
                     android:lineSpacingExtra="53sp"
@@ -117,11 +122,11 @@
                     app:layout_constraintTop_toBottomOf="@id/textView2" />
 
                 <TextView
-                    android:id="@+id/face_shape_text_eng"
+                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
                     android:fontFamily="sans-serif"
                     android:letterSpacing="0.04"
                     android:lineSpacingExtra="15sp"
@@ -133,15 +138,17 @@
 
             </LinearLayout>
 
-            <!-- 얼굴형 결과 이미지 -->
+            //얼굴형결과 이미지 추가해야함
+
             <ImageView
                 android:id="@+id/faceShape_img"
                 android:layout_width="150dp"
                 android:layout_height="130dp"
+                android:layout_alignParentLeft="true"
                 android:layout_gravity="center_vertical" />
 
             <ImageButton
-                android:id="@+id/face_shape_btn"
+                android:id="@+id/button1"
                 android:layout_width="40dp"
                 android:layout_height="93dp"
                 android:layout_gravity="center_vertical"
@@ -158,6 +165,9 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 
+
+        //퍼스널컬러
+
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
@@ -166,21 +176,22 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/personal_color"
-                    android:layout_width="160dp"
+                    android:id="@+id/faceShape"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
                     android:fontFamily="sans-serif"
                     android:lineSpacingExtra="18sp"
                     android:text="고객님의 퍼스널 컬러는"
@@ -192,11 +203,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/personal_color_text_kor"
+                    android:id="@+id/res_faceShape"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="11dp"
+                    android:layout_marginLeft="11dp"
                     android:fontFamily="sans-serif"
                     android:letterSpacing="0.04"
                     android:lineSpacingExtra="53sp"
@@ -210,11 +221,11 @@
                     app:layout_constraintTop_toBottomOf="@id/textView2" />
 
                 <TextView
-                    android:id="@+id/personal_color_text_eng"
+                    android:id="@+id/res_faceShape_eng"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
                     android:fontFamily="sans-serif"
                     android:letterSpacing="0.04"
                     android:lineSpacingExtra="15sp"
@@ -230,6 +241,7 @@
                 android:id="@+id/warmTone"
                 android:layout_width="150dp"
                 android:layout_height="130dp"
+                android:layout_alignParentLeft="true"
                 android:layout_gravity="center_vertical"
                 app:srcCompat="@drawable/warm" />
 
@@ -245,21 +257,14 @@
 
 
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#ECAC62"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintBottom_toTopOf="@+id/btn_maskAlarm" />
-
+        //마스크알리미버튼
         <Button
             android:id="@+id/btn_maskAlarm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/rectangle_btn"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/rectangle_id"
             android:fontFamily="sans-serif"
             android:lineSpacingExtra="18sp"
             android:text="마스크 알리미"
@@ -267,21 +272,23 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintBottom_toTopOf="@+id/btn_info">
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         </Button>
 
 
+        //개인정보수정버튼
         <Button
             android:id="@+id/btn_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/rectangle_btn"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rectangle_id"
             android:fontFamily="sans-serif"
             android:lineSpacingExtra="18sp"
             android:text="개인정보수정"
@@ -289,30 +296,15 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/btn_logout"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_maskAlarm">
+            app:layout_constraintTop_toBottomOf="@+id/btn_maskAlarm"
+            app:layout_constraintVertical_bias="0.04000002">
 
         </Button>
 
-        <Button
-            android:id="@+id/btn_logout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/rectangle_btn"
-            android:text="로그아웃"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_info" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

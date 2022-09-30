@@ -58,25 +58,33 @@ class RegisterActivity : AppCompatActivity() {
                 id: Long,
             ) {
                 when (position) {
-                    // 선택안함
+                    //선택안함
                     1 -> {
                         //To do선택 시 동작
                         // DB insert 값을 null 설정
                     }
-                    // 둥근형
+                    //계란형
                     2 -> {
                         //To do선택 시 동작
                     }
-                    // 사각형
+                    //마름모형
                     3 -> {
                         //To do선택 시 동작
                     }
-                    // 하트형
+                    //하트형
                     4 -> {
                         //To do선택 시 동작
                     }
-                    // 계란형
+                    //땅콩형
                     5 -> {
+                        //To do선택 시 동작
+                    }
+                    //육각형
+                    6 -> {
+                        //To do선택 시 동작
+                    }
+                    //둥근형
+                    7 -> {
                         //To do선택 시 동작
                     }
                 }
@@ -159,9 +167,11 @@ class RegisterActivity : AppCompatActivity() {
                             }
                         }
                     // 성별 텍스트
-                    val gender = when (binding.radioGroup.checkedRadioButtonId) {
-                        R.id.MaleRadioBtn -> binding.MaleRadioBtn.text.toString()
-                        else -> binding.FemaleRadioBtn.text.toString()
+                    var gender: String = binding.MaleRadioBtn.text.toString()
+                    if (binding.radioGroup.checkedRadioButtonId == R.id.MaleRadioBtn) {
+                        gender = binding.MaleRadioBtn.text.toString()
+                    } else if (binding.radioGroup.checkedRadioButtonId == R.id.FemaleRadioBtn) {
+                        gender = binding.FemaleRadioBtn.text.toString()
                     }
 
                     val registerRequest = RegisterRequest(

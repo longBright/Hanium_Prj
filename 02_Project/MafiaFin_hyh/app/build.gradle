@@ -4,7 +4,6 @@ plugins {
     id 'kotlin-android-extensions'
 }
 apply plugin: 'kotlin-android'
-apply plugin: 'com.google.ar.sceneform.plugin'
 
 android {
     compileSdk 31
@@ -43,6 +42,9 @@ android {
     aaptOptions {
         noCompress "tflite"
     }
+//    buildFeatures {     //listview_item.xml
+//        viewBinding true
+//    }
 }
 
 dependencies {
@@ -84,7 +86,6 @@ dependencies {
 
     //arcore
     implementation 'com.google.ar:core:1.31.0'
-    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.14.0"
 
     // MySQL PHP 통신을 위한 volley 라이브러리 추가
     implementation 'com.android.volley:volley:1.1.1'

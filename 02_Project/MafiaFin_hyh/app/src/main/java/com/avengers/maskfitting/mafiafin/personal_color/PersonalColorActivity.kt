@@ -16,7 +16,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.avengers.maskfitting.mafiafin.account.RegisterActivity
 import com.avengers.maskfitting.mafiafin.databinding.ActivityPersonalCameraBinding
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.face.*
@@ -161,12 +160,6 @@ class PersonalColorActivity : PersonalBaseActivity() {
 //        binding.btnDetection.setOnClickListener {
 //            startDetection()
 //        }
-
-        /* 임시 코드 - 검사하기 버튼 */
-        binding.btnDetection.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-        }
     }
 
 

@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.avengers.maskfitting.mafiafin.databinding.FragmentMaskFittingNewBinding
+import com.avengers.maskfitting.mafiafin.databinding.FragmentMaskFittingBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,9 +22,7 @@ class Mask_fitting : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    var maskNum = 0
-    private lateinit var binding: FragmentMaskFittingNewBinding
-
+    private lateinit var binding: FragmentMaskFittingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,40 +36,33 @@ class Mask_fitting : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMaskFittingNewBinding.inflate(inflater, container, false)
+        binding = FragmentMaskFittingBinding.inflate(inflater, container, false)
 
         binding.imagebtn1.setOnClickListener{
-            maskNum =1
-
-            val intent = Intent(activity, FaceLandmarksActivity::class.java)
+            val intent = Intent(activity, FittingActivity::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn2.setOnClickListener{
-            maskNum = 2
-            val intent = Intent(activity, FaceLandmarksActivityKF::class.java)
+            val intent = Intent(activity, FittingActivity::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
-
         }
 
         binding.imagebtn3.setOnClickListener{
-            maskNum = 3
-            val intent = Intent(activity, FaceLandmarksActivityBird::class.java)
+            val intent = Intent(activity, FittingActivity::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn4.setOnClickListener{
-            maskNum = 4
             val intent = Intent(activity, FittingActivity::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)
         }
 
         binding.imagebtn5.setOnClickListener{
-            maskNum = 5
             val intent = Intent(activity, FittingActivity::class.java)
             // intent 에 값을 넣어 전달
             startActivity(intent)

@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".main.MainActivity">
 
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_btn"
+        android:text="로그아웃"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <FrameLayout
         android:id="@+id/fl_container"
         android:layout_width="0dp"
@@ -13,7 +23,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bnv_main"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize" android:id="@+id/bnv_main" android:background="#FFFFFF"

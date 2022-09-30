@@ -56,24 +56,6 @@
             android:name=".account.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".main.fitting.FaceLandmarksActivity"
-            android:exported="true" />
-        <activity
-        android:name=".main.fitting.FaceLandmarksActivityKF"
-        android:exported="true" />
-        <activity
-            android:name=".main.fitting.FaceLandmarksActivityBird"
-            android:exported="true" />
-        <activity
-            android:name="com.example.alarm.MaskAlertMainActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.alarm.MaskRegisterationActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.alarm.PurchaseAlertActivity"
-            android:exported="true" />
-        <activity
             android:name=".main.SplashActivity"
             android:exported="true">
             <intent-filter>
