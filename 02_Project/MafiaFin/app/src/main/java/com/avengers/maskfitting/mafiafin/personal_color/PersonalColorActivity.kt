@@ -13,7 +13,6 @@ import android.content.Intent
 
 //import com.example.camerasendapp.MainActivity
 
-import android.app.Activity
 import android.provider.MediaStore
 import com.android.volley.toolbox.Volley
 import androidx.core.app.ActivityCompat
@@ -29,23 +28,17 @@ import android.util.Base64
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import androidx.annotation.RequiresApi
 import java.io.*
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 
-import android.R
-import android.graphics.Color
-import android.graphics.ImageDecoder
-import android.graphics.drawable.ColorDrawable
-import android.view.View
 import com.android.volley.*
-import com.avengers.maskfitting.mafiafin.account.RegisterActivity
 import com.avengers.maskfitting.mafiafin.databinding.ActivityPersonalCameraBinding
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.face.*
 import kotlinx.android.synthetic.main.activity_personal_camera.*
-import java.io.FileNotFoundException
 import java.io.InputStream
 
 
@@ -65,13 +58,14 @@ class PersonalColorActivity : AppCompatActivity() {
     private var imageString: String? = null
     private lateinit var binding: ActivityPersonalCameraBinding
 
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPersonalCameraBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         init()
-        btn_capture!!.setOnClickListener { camera_open_intent() }
+        btn_capture!!.setOnClickListener { cameraOpenIntent() }
         btn_gallery!!.setOnClickListener { gallery_open_intent() }
         btn_send!!.setOnClickListener {
             progress = ProgressDialog(this@PersonalColorActivity)
@@ -104,21 +98,27 @@ class PersonalColorActivity : AppCompatActivity() {
             flask_url,
             Response.Listener { response ->
                 progress!!.dismiss()
-                if (response == "1") {
-                    Toast.makeText(this@PersonalColorActivity, "봄 웜톤", Toast.LENGTH_LONG)
-                        .show()
-                } else if (response == "2") {
-                    Toast.makeText(this@PersonalColorActivity, "가을 웜톤", Toast.LENGTH_LONG)
-                        .show()
-                } else if (response == "3") {
-                    Toast.makeText(this@PersonalColorActivity, "여름 쿨톤", Toast.LENGTH_LONG)
-                        .show()
-                }else if (response == "4") {
-                    Toast.makeText(this@PersonalColorActivity, "겨울 쿨톤", Toast.LENGTH_LONG)
-                        .show()
-                }else {
-                    Toast.makeText(this@PersonalColorActivity, "Some error occurred!", Toast.LENGTH_LONG)
-                        .show()
+                when (response) {
+                    "1" -> {
+                        Toast.makeText(this@PersonalColorActivity, "봄 웜톤", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                    "2" -> {
+                        Toast.makeText(this@PersonalColorActivity, "가을 웜톤", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                    "3" -> {
+                        Toast.makeText(this@PersonalColorActivity, "여름 쿨톤", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                    "4" -> {
+                        Toast.makeText(this@PersonalColorActivity, "겨울 쿨톤", Toast.LENGTH_LONG)
+                            .show()
+                    }
+                    else -> {
+                        Toast.makeText(this@PersonalColorActivity, "Some error occurred!", Toast.LENGTH_LONG)
+                            .show()
+                    }
                 }
 //                if (response == "test") {
 //                    Toast.makeText(this@PersonalColorActivity, "Uploaded Successful", Toast.LENGTH_LONG)
@@ -154,6 +154,7 @@ class PersonalColorActivity : AppCompatActivity() {
         queue!!.add(request)
     }
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
@@ -216,6 +217,7 @@ class PersonalColorActivity : AppCompatActivity() {
     }
 
     //갤러리 사진 저장 기능
+    @RequiresApi(Build.VERSION_CODES.Q)
     private fun saveFile(currentPhotoPath: String?) {
         val bitmap = BitmapFactory.decodeFile(currentPhotoPath)
         val values = ContentValues()
@@ -242,10 +244,8 @@ class PersonalColorActivity : AppCompatActivity() {
             getContentResolver(): ContentResolver객체 반환
             */
             var parcelFileDescriptor: ParcelFileDescriptor? = null
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                parcelFileDescriptor =
-                    contentResolver.openFileDescriptor(uri!!, "w", null) //미디어 파일 열기
-            }
+            parcelFileDescriptor =
+                contentResolver.openFileDescriptor(uri!!, "w", null) //미디어 파일 열기
             if (parcelFileDescriptor == null) return
 
             //바이트기반스트림을 이용하여 JPEG파일을 바이트단위로 쪼갠 후 저장
@@ -269,7 +269,7 @@ class PersonalColorActivity : AppCompatActivity() {
             inputStream.close()
             parcelFileDescriptor.close()
             contentResolver.update(
-                uri!!,
+                uri,
                 values,
                 null,
                 null
@@ -286,7 +286,7 @@ class PersonalColorActivity : AppCompatActivity() {
     }
 
     //카메라 호출
-    private fun camera_open_intent() {
+    private fun cameraOpenIntent() {
         Log.d("Camera", "카메라실행!")
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (takePictureIntent.resolveActivity(packageManager) != null) {
