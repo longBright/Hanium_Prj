@@ -3,15 +3,12 @@ package com.avengers.maskfitting.mafiafin.personal_color
 import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.app.ProgressDialog
-import com.android.volley.RequestQueue
 import android.graphics.Bitmap
 import android.os.Bundle
 
 import com.android.volley.toolbox.StringRequest
 import android.widget.Toast
-import com.android.volley.VolleyError
 import kotlin.Throws
-import com.android.volley.AuthFailureError
 import android.content.Intent
 
 //import com.example.camerasendapp.MainActivity
@@ -32,7 +29,6 @@ import android.util.Base64
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
-import com.android.volley.Response
 import java.io.*
 import java.lang.Exception
 import java.text.SimpleDateFormat
@@ -43,6 +39,7 @@ import android.graphics.Color
 import android.graphics.ImageDecoder
 import android.graphics.drawable.ColorDrawable
 import android.view.View
+import com.android.volley.*
 import com.avengers.maskfitting.mafiafin.account.RegisterActivity
 import com.avengers.maskfitting.mafiafin.databinding.ActivityPersonalCameraBinding
 import com.google.mlkit.vision.common.InputImage
@@ -103,7 +100,8 @@ class PersonalColorActivity : AppCompatActivity() {
         //val flask_url = "http://3.35.13.226:5000/sendFrame"
 
         val request: StringRequest = object : StringRequest(
-            Method.POST, flask_url,
+            Method.POST,
+            flask_url,
             Response.Listener { response ->
                 progress!!.dismiss()
                 if (response == "1") {
@@ -137,6 +135,7 @@ class PersonalColorActivity : AppCompatActivity() {
                     "Some error occurred -> $error",
                     Toast.LENGTH_LONG
                 ).show()
+                Log.d("에러!","$error")
             }) {
             @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String> {
@@ -145,6 +144,13 @@ class PersonalColorActivity : AppCompatActivity() {
                 return params
             }
         }
+
+        // Volley.timeoutError 발생 시 재요청 전송 코드(Retry)
+        request.retryPolicy = DefaultRetryPolicy(
+            20000,
+            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        )
         queue!!.add(request)
     }
 
