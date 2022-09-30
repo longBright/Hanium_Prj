@@ -97,7 +97,7 @@ class PersonalColorActivity : AppCompatActivity() {
 
         //base64형태로 변환된 이미지 데이터를 플라스크 서버로 전송
         //String flask_url = "http://172.30.1.6:5000/sendFrame";
-        val flask_url = "http://192.168.219.137:5000/sendFrame"
+        val flask_url = "http://43.200.115.71:5000/sendFrame"
         //val flask_url = "http://127.0.0.1:5000/sendFrame"
 
         //val flask_url = "http://3.35.13.226:5000/sendFrame"
