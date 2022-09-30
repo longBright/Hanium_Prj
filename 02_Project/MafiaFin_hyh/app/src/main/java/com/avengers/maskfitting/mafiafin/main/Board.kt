@@ -76,7 +76,7 @@ class Board : Fragment() {
             val icon = item.iconDrawable
         }
 
-        return inflater.inflate(R.layout.fragment_board, container, false)
+        return view
     }
 
     companion object {
