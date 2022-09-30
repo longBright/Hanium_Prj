@@ -1,4 +1,4 @@
-package com.example.alarm
+package com.avengers.maskfitting.mafiafin.main.alarm
 
 import android.view.LayoutInflater
 import android.view.View

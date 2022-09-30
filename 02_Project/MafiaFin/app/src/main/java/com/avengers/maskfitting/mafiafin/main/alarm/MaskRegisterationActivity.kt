@@ -1,4 +1,4 @@
-package com.example.alarm
+package com.avengers.maskfitting.mafiafin.main.alarm
 
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -17,7 +17,6 @@ import com.android.volley.Response
 import com.android.volley.toolbox.Volley
 import com.avengers.maskfitting.mafiafin.R
 import com.avengers.maskfitting.mafiafin.databinding.ActivityMaskRegisterationBinding
-import com.example.alarm.db.MaskRegisterRequest
 import org.json.JSONObject
 
 class MaskRegisterationActivity : AppCompatActivity() {

@@ -206,15 +206,19 @@
             app:srcCompat="@drawable/dental" />
 
         <TextView
-            android:id="@+id/text_LOGO"
-            android:layout_width="139dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="4dp"
-            android:text="Ma!fia"
-            android:textSize="37sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/ma_fia"
+            android:textColor="#ECAC62"
+            android:textSize="36sp"
+            android:id="@+id/mafia_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.101"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:fontFamily="@font/comfortaa" />
+            app:layout_constraintVertical_bias="0.035" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

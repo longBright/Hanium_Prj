@@ -16,7 +16,7 @@ import com.avengers.maskfitting.mafiafin.R
 import com.avengers.maskfitting.mafiafin.account.LoginActivity
 import com.avengers.maskfitting.mafiafin.databinding.FragmentMypageBinding
 import com.avengers.maskfitting.mafiafin.main.MainActivity
-import com.example.alarm.MaskAlertMainActivity
+import com.avengers.maskfitting.mafiafin.main.alarm.MaskAlertMainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import org.json.JSONException

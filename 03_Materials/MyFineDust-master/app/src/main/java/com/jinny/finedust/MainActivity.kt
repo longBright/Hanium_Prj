@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
 
         (measuredValue.khaiGrade ?: Grade.UNKNOWN).let { grade ->
             binding.root.setBackgroundResource(grade.colorResId)
-            binding.totalGradeLabelTextView.text = grade.label
+            binding.totalGradeLabelTextView.text = grade.label                      //해당 수치에 알맞은 이모지 출력
             binding.totalGradleImojiTextView.text = grade.emoji
         }
         with(measuredValue) {
@@ -124,19 +124,18 @@ class MainActivity : AppCompatActivity() {
             binding.ultraFineDustInfoTextView.text =
                 "초미세먼지: $pm25Value ㎍/㎥ ${(pm25Grade ?: Grade.UNKNOWN).emoji}"
             //---------------------마스크 추천-------------------------------------------
-
-            if (pm10Grade?.label.equals("좋음") || pm10Grade?.label.equals("보통")) { //좋음이거나 보통
-                binding.RecomMask.text = "덴탈 마스크 / 미착용"                         //마스크 텍스트
-                binding.maskImage.setImageResource(R.drawable.dental)                //마스크 이미지
-            } else if (pm10Grade?.label.equals("나쁨")) {
-                binding.RecomMask.text = "KF 80"
+            if (pm10Grade?.label.equals("좋음") || pm10Grade?.label.equals("보통")) { //미세먼지 농도가 좋음이거나 보통이면
+                binding.RecomMask.text = "덴탈 마스크 / 미착용"                         //덴탈 마스크 혹은 미착용 추천
+                binding.maskImage.setImageResource(R.drawable.dental)
+            } else if (pm10Grade?.label.equals("나쁨")) {                             //농도가 나쁨이면
+                binding.RecomMask.text = "KF 80"                                     //KF 80 등급의 마스크 추천
                 binding.maskImage.setImageResource(R.drawable.kf)
-            }else if (pm10Grade?.label.equals("매우 나쁨")) {
-                    binding.RecomMask.text = "KF 94"
+            }else if (pm10Grade?.label.equals("매우 나쁨")) {                          //농도가 매우 나쁨이면
+                    binding.RecomMask.text = "KF 94"                                 //KF 94 등급의 마스크 추천
                     binding.maskImage.setImageResource(R.drawable.kf)
             }
             else
-                binding.RecomMask.text = "미측정"
+                binding.RecomMask.text = "미측정"                                     //그 이외에 측정이 되지 않는 경우
         }
     }
 

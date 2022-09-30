@@ -7,15 +7,33 @@
 
     <TextView
         android:id="@+id/maskTypeText"
-        android:layout_width="134dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="4dp"
-        android:text="마스크 종류"
-        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="마스크 등록"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/ma_fia"
+        android:textColor="#ECAC62"
+        android:textSize="36sp"
+        android:id="@+id/mafia_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035" />
 
     <Spinner
         android:id="@+id/maskType"
@@ -25,12 +43,12 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069" />
+        app:layout_constraintVertical_bias="0.108" />
 
     <View
         android:id="@+id/view2"
@@ -107,8 +125,9 @@
         android:layout_width="100dp"
         android:layout_height="36dp"
         android:layout_marginTop="12dp"
+        android:textColor="@color/black"
         android:text="구매일"
-        android:textSize="11dp"
+        android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,21 +135,31 @@
 
     <Button
         android:id="@+id/returnBtn"
-        android:layout_width="97dp"
-        android:layout_height="49dp"
+        android:layout_width="94dp"
+        android:layout_height="39dp"
         android:layout_marginTop="548dp"
         android:layout_marginEnd="308dp"
         android:text="뒤로가기"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/rectangle_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/maskRegisterationBtn"
-        android:layout_width="97dp"
-        android:layout_height="49dp"
+        android:layout_width="94dp"
+        android:layout_height="39dp"
         android:layout_marginStart="308dp"
         android:layout_marginTop="548dp"
         android:text="등  록"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/rectangle_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -142,6 +171,7 @@
         android:layout_marginBottom="8dp"
         android:text="수량"
         android:textSize="12dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/maskCounter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.85"
@@ -182,6 +212,10 @@
         android:layout_width="54dp"
         android:layout_height="51dp"
         android:text="📆"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/rectangle_btn"
         app:layout_constraintBottom_toTopOf="@+id/beforePurchaseDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.372"
