@@ -20,6 +20,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.035" />
 
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="2dp"-->
+    <!--        android:background="#ECAC62"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.096"-->
+    <!--        tools:layout_editor_absoluteX="0dp" />-->
+
     <TextView
         android:id="@+id/AlertText"
         android:layout_width="wrap_content"
@@ -33,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -48,13 +57,14 @@
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="407dp"
-        android:layout_height="501dp"
+        android:layout_width="414dp"
+        android:layout_height="540dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339">
+        app:layout_constraintVertical_bias="0.351">
 
     </ListView>
 
@@ -70,30 +80,32 @@
         android:id="@+id/editMask"
         android:layout_width="94dp"
         android:layout_height="39dp"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="572dp"
+        android:layout_marginStart="300dp"
         android:background="@drawable/rectangle_btn"
         android:text="등록하기"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887" />
 
     <Button
         android:id="@+id/ReturnBtn"
         android:layout_width="94dp"
         android:layout_height="39dp"
-        android:layout_marginTop="572dp"
-        android:layout_marginEnd="292dp"
+        android:layout_marginEnd="296dp"
         android:background="@drawable/rectangle_btn"
-        android:text="처음으로"
+        android:text="메인으로"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
