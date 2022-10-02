@@ -11,9 +11,13 @@ import org.json.JSONException
 import org.json.JSONObject
 import android.widget.AdapterView
 import androidx.core.content.ContextCompat
+import androidx.core.view.get
 import com.android.volley.toolbox.JsonObjectRequest
 import com.avengers.maskfitting.mafiafin.R
 import com.avengers.maskfitting.mafiafin.databinding.ActivityMaskAlertListBinding
+import kotlinx.android.synthetic.main.activity_mask_registeration.view.*
+import kotlinx.android.synthetic.main.listview_item.view.*
+import kotlinx.android.synthetic.main.mask_alert_custom_list_item.view.*
 
 
 class MaskAlertMainActivity : AppCompatActivity() {
@@ -101,8 +105,9 @@ class MaskAlertMainActivity : AppCompatActivity() {
                         // 상세 조회로 이동
                         listView.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
                             val intent = Intent(this, PurchaseAlertActivity::class.java)
-                            intent.putExtra("maskNickname", maskNickname) //ListViewItem.get(position).title
-                            intent.putExtra("maskName", maskName)
+
+                            intent.putExtra("maskNickname", items[position].title)
+                            intent.putExtra("maskName", items[position].subTitle)
                             startActivity(intent)
                         }
                         adapter.notifyDataSetChanged()   //변경내용 반영
