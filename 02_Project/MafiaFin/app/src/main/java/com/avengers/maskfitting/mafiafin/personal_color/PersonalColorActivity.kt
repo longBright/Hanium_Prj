@@ -58,7 +58,7 @@ class PersonalColorActivity : AppCompatActivity() {
     private var imageString: String? = null
     private lateinit var binding: ActivityPersonalCameraBinding
 
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPersonalCameraBinding.inflate(layoutInflater)
