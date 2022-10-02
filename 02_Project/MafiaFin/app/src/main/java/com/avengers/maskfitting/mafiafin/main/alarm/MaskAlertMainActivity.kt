@@ -98,6 +98,7 @@ class MaskAlertMainActivity : AppCompatActivity() {
                         }
 //                        nameArr.add(maskNickname)
 
+                        // 상세 조회로 이동
                         listView.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
                             val intent = Intent(this, PurchaseAlertActivity::class.java)
                             intent.putExtra("maskNickname", maskNickname) //ListViewItem.get(position).title

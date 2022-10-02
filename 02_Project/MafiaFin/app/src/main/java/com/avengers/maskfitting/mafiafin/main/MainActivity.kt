@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.avengers.maskfitting.mafiafin.R
 import com.avengers.maskfitting.mafiafin.databinding.ActivityMainBinding
+import com.avengers.maskfitting.mafiafin.main.board.bulletinBoard.BulletinBoard
 import com.avengers.maskfitting.mafiafin.main.fitting.Mask_fitting
 import com.avengers.maskfitting.mafiafin.main.mypage.MyPage
 import com.avengers.maskfitting.mafiafin.main.weather.WeatherInfo
@@ -75,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction().replace(R.id.fl_container, WeatherFragment).commit()
                 }
                 R.id.third -> {
-                    val BoardFragment = Board()
+                    val BoardFragment = BulletinBoard()
                     supportFragmentManager.beginTransaction().replace(R.id.fl_container, BoardFragment).commit()
                 }
                 R.id.fourth -> {

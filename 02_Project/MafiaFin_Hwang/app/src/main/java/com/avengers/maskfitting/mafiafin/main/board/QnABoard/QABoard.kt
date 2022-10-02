@@ -1,7 +1,6 @@
 package com.avengers.maskfitting.mafiafin.main.board.QnAboard
 
 import android.content.Intent
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +10,7 @@ import android.widget.ListView
 import android.widget.AdapterView
 import com.avengers.maskfitting.mafiafin.R
 import com.avengers.maskfitting.mafiafin.databinding.FragmentQaBoardBinding
-import com.avengers.maskfitting.mafiafin.databinding.ListviewItemQaBinding
+import com.avengers.maskfitting.mafiafin.main.board.QnABoard.ListViewAdapter
 import com.avengers.maskfitting.mafiafin.main.board.bulletinBoard.BulletinBoard
 
 // TODO: Rename parameter arguments, choose names that match

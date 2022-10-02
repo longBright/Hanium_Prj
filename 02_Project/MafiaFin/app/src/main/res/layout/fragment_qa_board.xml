@@ -8,8 +8,8 @@
     android:orientation="vertical"
     android:weightSum="10"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".main.board.bulletinBoard"
-    tools:showIn="@layout/fragment_board">
+    tools:context=".main.board.QnABoard"
+    tools:showIn="@layout/fragment_qa_board">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="자유게시판"
+            android:text="Q&amp;A 게시판"
             android:textSize="23dp"
             android:textStyle="bold" />
 
@@ -48,7 +48,8 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="#ECAC62"
+            android:background="#55ECAC62"
+            android:textColor="#909090"
             android:text="자유게시판" />
 
         <Button
@@ -56,9 +57,8 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="#55ECAC62"
-            android:text="Q&amp;A게시판"
-            android:textColor="#909090" />
+            android:background="#ECAC62"
+            android:text="Q&amp;A게시판" />
 
     </LinearLayout>
 
