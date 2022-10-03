@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="자유게시판"
+            android:text="Q&amp;A게시판"
             android:textSize="23dp"
             android:textStyle="bold" />
 
@@ -57,19 +57,19 @@
             android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="#ECAC62"
+            android:background="#55ECAC62"
             android:gravity="center"
-            android:text="자유게시판" />
+            android:text="자유게시판"
+            android:textColor="#909090"/>
 
         <Button
             android:id="@+id/board2"
             android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="#55ECAC62"
+            android:background="#ECAC62"
             android:gravity="center"
-            android:text="Q&amp;A게시판"
-            android:textColor="#909090" />
+            android:text="Q&amp;A게시판" />
 
     </LinearLayout>
 

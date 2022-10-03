@@ -3,6 +3,7 @@ package com.avengers.maskfitting.mafiafin.main.alarm
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.avengers.maskfitting.mafiafin.databinding.ActivityMaskPurchaseDetailBinding
 
@@ -36,7 +37,15 @@ class PurchaseAlertActivity : AppCompatActivity() {
             val intentDelete = Intent(this, MaskAlertMainActivity::class.java)
             startActivity(intentDelete)
         }
+
+        var maskNickname = binding.maskNickname
+        if (intent.hasExtra("maskNickname")) {
+            maskNickname.text = intent.getStringExtra("maskNickname")
+        } else {
+            Toast.makeText(this, "전달된 이름이 없습니다", Toast.LENGTH_SHORT).show()
+        }
     }
+
     companion object {
         private const val Search = "마스크"
     }

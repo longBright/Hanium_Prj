@@ -11,9 +11,13 @@ import org.json.JSONException
 import org.json.JSONObject
 import android.widget.AdapterView
 import androidx.core.content.ContextCompat
+import androidx.core.view.get
 import com.android.volley.toolbox.JsonObjectRequest
 import com.avengers.maskfitting.mafiafin.R
 import com.avengers.maskfitting.mafiafin.databinding.ActivityMaskAlertListBinding
+import kotlinx.android.synthetic.main.activity_mask_registeration.view.*
+import kotlinx.android.synthetic.main.listview_item.view.*
+import kotlinx.android.synthetic.main.mask_alert_custom_list_item.view.*
 
 
 class MaskAlertMainActivity : AppCompatActivity() {
@@ -43,6 +47,7 @@ class MaskAlertMainActivity : AppCompatActivity() {
         var maskNickname = ""
         var maskName = ""
         var maskImage = ""
+        var alert = ""
         // request json object response from the provided url
         val request = JsonObjectRequest(
             Request.Method.GET, // method
@@ -66,20 +71,45 @@ class MaskAlertMainActivity : AppCompatActivity() {
                         // get current json object as student instance
                         val maskData: JSONObject = array.getJSONObject(i)
                         // get the current student (json object) data
-                        maskNickname = maskData.getString("mask_nickname")
-                        maskName = maskData.getString("mask_name")
-                        maskImage = maskData.getString("mask_type")
+                        maskNickname = maskData.getString("mask_nickname")          // 마스크 별명
+                        maskName = maskData.getString("mask_name")                  // 마스크 품명
+                        maskImage = maskData.getString("mask_type")                 // 마스크 타입 이미지
+                        alert = maskData.getInt("set_alert").toString()             // 마스크 재구매 알림 설정 여부
                         //display the formatted json data in text view
                         //textView.append("$maskNickname\n $maskName\n\n")
 
-                        if (maskImage == "덴탈 마스크") {
-                            items.add(ListViewItem(ContextCompat.getDrawable(this, R.drawable.dental)!!, maskNickname, maskName))
-                        }
-                        else if (maskImage == "KF 80" || maskName == "KF 94") {
-                            items.add(ListViewItem(ContextCompat.getDrawable(this, R.drawable.kf)!!, maskNickname, maskName))
+                        if (alert == "1") { alert = "🔔" }                                 // 알림 설정 햇다면, 이모지 출력
+                        else if (alert == "0") { alert = "" }                             // 알림 설정을 안했다면, 공백 출력
+
+                        if (maskImage == "덴탈 마스크") {                                   // 덴탈 마스크 타입이라면 덴탈 이미지 출력
+                            items.add(
+                                ListViewItem(
+                                    ContextCompat.getDrawable(
+                                        this,
+                                        R.drawable.dental
+                                    )!!, maskNickname, maskName, alert
+                                )
+                            )
+                        } else if (maskImage == "KF 80" || maskName == "KF 94") {          // kf 마스크 타입이라면 kf 마스크 이미지 출력
+                            items.add(
+                                ListViewItem(
+                                    ContextCompat.getDrawable(
+                                        this,
+                                        R.drawable.kf
+                                    )!!, maskNickname, maskName, alert
+                                )
+                            )
                         }
 //                        nameArr.add(maskNickname)
 
+                        // 상세 조회로 이동
+                        listView.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
+                            val intent = Intent(this, PurchaseAlertActivity::class.java)
+
+                            intent.putExtra("maskNickname", items[position].title)
+                            intent.putExtra("maskName", items[position].subTitle)
+                            startActivity(intent)
+                        }
                         adapter.notifyDataSetChanged()   //변경내용 반영
                     }
                 }catch (e: JSONException){
@@ -100,9 +130,5 @@ class MaskAlertMainActivity : AppCompatActivity() {
 //            val intent = Intent(this, PurchaseAlert::class.java)
 //            startActivity(intent)
 //        }
-        listView.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
-            val intent = Intent(this, PurchaseAlertActivity::class.java)
-            startActivity(intent)
-        }
     }
 }
