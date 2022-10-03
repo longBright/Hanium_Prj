@@ -100,7 +100,7 @@ class MaskAlertMainActivity : AppCompatActivity() {
                                     )!!, maskNickname, maskName, alert, purchaseDate, count
                                 )
                             )
-                        } else if (maskImage == "KF 80" || maskName == "KF 94") {          // kf 마스크 타입이라면 kf 마스크 이미지 출력
+                        } else if (maskImage == "KF 80" || maskImage == "KF 94") {          // kf 마스크 타입이라면 kf 마스크 이미지 출력
                             items.add(
                                 ListViewItem(
                                     ContextCompat.getDrawable(

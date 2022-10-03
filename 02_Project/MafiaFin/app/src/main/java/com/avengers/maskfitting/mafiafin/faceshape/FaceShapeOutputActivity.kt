@@ -38,12 +38,14 @@ class FaceShapeOutputActivity : AppCompatActivity() {
             "2" -> binding.faceShape.text = "둥근형 얼굴 입니다"
             "3" -> binding.faceShape.text = "사각형 얼굴 입니다"
             else -> binding.faceShape.text = "분류된 얼굴형이 없습니다"
-
         }
+
+
         binding.btnNext.setOnClickListener {
-          var intent = Intent(this, PersonalColorActivity::class.java)
-         startActivity(intent)
-         this.finish()
+            var intent = Intent(this, PersonalColorActivity::class.java)
+            intent.putExtra("FaceShape", result)
+            startActivity(intent)
+            this.finish()
         }
     }
 }

@@ -3,9 +3,11 @@ package com.avengers.maskfitting.mafiafin.account
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -35,6 +37,10 @@ class RegisterActivity : AppCompatActivity() {
         AndroidThreeTen.init(this)
 
         // 이전 액티비티(얼굴형, 퍼스널 컬러 진단)에서 intent로 보낸 값이 있을 경우 받아줘야함
+        val faceShapeResult = intent.getStringExtra("FaceShape")
+        val personalColorResult = intent.getStringExtra("PersonalColor")
+        Log.d("얼굴형 결과", faceShapeResult.toString())
+        Log.d("퍼스널컬러 결과", personalColorResult.toString())
 
         // 스피너 어댑터 연결
         binding.spinFaceShape.adapter = ArrayAdapter.createFromResource(this,
@@ -43,6 +49,10 @@ class RegisterActivity : AppCompatActivity() {
         binding.spinPersonalColor.adapter = ArrayAdapter.createFromResource(this,
             R.array.personalcolourList,
             android.R.layout.simple_spinner_item)  // connect personal colour adapter
+
+        // 초기값 설정
+        binding.spinFaceShape.setSelection(getIndex(binding.spinFaceShape, faceShapeResult))
+        binding.spinPersonalColor.setSelection(getIndex(binding.spinPersonalColor, personalColorResult))
 
         // 얼굴형 스피너 선택 시 동작
         binding.spinFaceShape.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -181,5 +191,12 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun getIndex(spinner: Spinner, item: String?): Int {
+        for (i: Int in 0 until spinner.count) {
+            if (spinner.getItemAtPosition(i).toString() == item) return i
+        }
+        return 0
     }
 }

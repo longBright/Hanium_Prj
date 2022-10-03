@@ -69,17 +69,19 @@ class PersonalColorActivity : AppCompatActivity() {
         init()
         btn_capture!!.setOnClickListener { cameraOpenIntent() }
         btn_gallery!!.setOnClickListener { gallery_open_intent() }
+
+
         btn_send!!.setOnClickListener {
             progress = ProgressDialog(this@PersonalColorActivity)
             progress!!.setMessage("Uploading...")
             progress!!.show()
-            sendImage()
+            sendImage(intent.getStringExtra("FaceShape").toString())
         }
     }
 
 
     //이미지 플라시크로 전송
-    private fun sendImage() {
+    private fun sendImage(faceShapeResult: String) {
 
         //비트맵 이미지를 byte로 변환 -> base64형태로 변환
         val baos = ByteArrayOutputStream()
@@ -90,8 +92,8 @@ class PersonalColorActivity : AppCompatActivity() {
 
         //base64형태로 변환된 이미지 데이터를 플라스크 서버로 전송
         //String flask_url = "http://172.30.1.6:5000/sendFrame";
-        val flask_url = "http://ec2-43-200-115-71.ap-northeast-2.compute.amazonaws.com:5000/sendFrame"
-        //val flask_url = "http://127.0.0.1:5000/sendFrame"
+//        val flask_url = "http://ec2-43-200-115-71.ap-northeast-2.compute.amazonaws.com:5000/sendFrame"
+        val flask_url = "http://220.117.238.117:5000/sendFrame"
 
         //val flask_url = "http://3.35.13.226:5000/sendFrame"
 
@@ -159,6 +161,7 @@ class PersonalColorActivity : AppCompatActivity() {
         var intent = Intent(this, PersonalColorOutputActivity::class.java)
         Log.d("PersonalColorActivity", personalColorResult)
         intent.putExtra("PersonalColor", personalColorResult)
+        intent.putExtra("FaceShape", faceShapeResult)
         startActivity(intent)
 
     }
