@@ -99,36 +99,28 @@
                 android:layout_height="1dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 android:alpha="0.5"
                 android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/MaskRecommendation"
                 app:layout_constraintTop_toBottomOf="@id/fineDustInfoTextView" />
-
-            <View
-                android:id="@+id/lowerDivider"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginBottom="12dp"
-                android:alpha="0.5"
-                android:background="@color/white"
-                app:layout_constraintBottom_toTopOf="@id/measuringStationAddressTextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/measuringStationAddressTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:autoSizeMaxTextSize="12sp"
                 android:autoSizeMinTextSize="8sp"
                 android:autoSizeTextType="uniform"
                 android:maxLines="1"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toTopOf="@id/additionalInfoTextView"
+                app:layout_constraintTop_toBottomOf="@id/buttonLinear"
+                app:layout_constraintBottom_toTopOf="@id/lowerDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="측정소 위치 : 강원도 ..." />
@@ -137,14 +129,11 @@
                 android:id="@+id/additionalInfoTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:alpha="0.3"
                 android:background="@color/black"
                 android:drawablePadding="6dp"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="6dp"
                 android:text="자료 출처: 환경부/한국환경공단\n해당 기관이 제공하는 자료는 '인증을 받지 않은 실시간 자료' 이므로 자료오류 및 표출방식에 따라 값이 다를 수 있습니다."
                 android:textColor="@color/white"
-                android:textSize="10sp"
+                android:textSize="16dp"
                 app:drawableStartCompat="@drawable/ic_baseline_info_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -152,64 +141,81 @@
 
             <TextView
                 android:id="@+id/MaskRecommendation"
-                android:layout_width="370dp"
-                android:layout_height="190dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="미측정"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="35sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/measuringStationAddressTextView"
+                app:layout_constraintBottom_toTopOf="@+id/mask_image"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.512"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/upperDivider"
                 app:layout_constraintVertical_bias="0.234" />
 
-            <Button
-                android:id="@+id/FittingBtn"
-                android:layout_width="130dp"
-                android:layout_height="39dp"
-                android:background="@drawable/rectangle_btn"
-                android:text="마스크 착용해보기"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/additionalInfoTextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.923"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/MaskRecommendation"
-                app:layout_constraintVertical_bias="0.603" />
-
-            <Button
-                android:id="@+id/SearchBtn"
-                android:layout_width="130dp"
-                android:layout_height="39dp"
-                android:background="@drawable/rectangle_btn"
-                android:text="마스크 보러가기"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/additionalInfoTextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.114"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/MaskRecommendation"
-                app:layout_constraintVertical_bias="0.603" />
-
             <ImageView
                 android:id="@+id/mask_image"
-                android:layout_width="217dp"
-                android:layout_height="119dp"
-                app:layout_constraintBottom_toTopOf="@+id/lowerDivider"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/buttonLinear"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/MaskRecommendation"
+                app:layout_constraintTop_toBottomOf="@+id/MaskRecommendation"
                 app:layout_constraintVertical_bias="0.388"
                 app:srcCompat="@drawable/dental" />
+
+            <LinearLayout
+                android:id="@+id/buttonLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mask_image"
+                app:layout_constraintBottom_toTopOf="@id/measuringStationAddressTextView">
+
+                <Button
+                    android:id="@+id/FittingBtn"
+                    android:layout_width="130dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/rectangle_btn"
+                    android:layout_marginEnd="100dp"
+                    android:text="마스크 착용해보기"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/SearchBtn"
+                    android:layout_width="130dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/rectangle_btn"
+                    android:text="마스크 보러가기"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/lowerDivider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="5dp"
+                android:alpha="0.5"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/buttonLinear"
+                app:layout_constraintBottom_toTopOf="@id/additionalInfoTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
 
             <TextView
                 android:id="@+id/mafia_logo"
