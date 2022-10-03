@@ -52,12 +52,13 @@ class QnABoard : Fragment() {
         val listview: ListView = binding.list
         listview.adapter = adapter
 
-        // 첫 번째 아이템 추가.
-        adapter.addItem("user1", "테스트 입니다")
-        // 두 번째 아이템 추가.
-        adapter.addItem("user2", "테스트 입니다")
-        // 세 번째 아이템 추가.
-        adapter.addItem("user3", "테스트 입니다")
+        //아이템 추가
+        adapter.addItem("마스크 주문제작", "인쇄용 주문제작 마스크 AA회사 이용해보신 분 있으신가요?")
+        adapter.addItem("헬스장 다녀보려고 하는데", "헬스할 때 사용할 마스크 추천하는거 있으신 분")
+        adapter.addItem("아기들 마스크", "귀여운 캐릭터 그려진 아기들 마스크 추천 부탁드려요~")
+        adapter.addItem("엘레베이터","다들 엘레베이터도 실내라고 생각하시나요?\n" +
+                "저는 실내라고 생각하는데 요즘 엘레베이터에 마스크를 착용하지 않고 타시는 분들이 꽤 많더라구요? 다들 어떻게 생각하세요")
+        adapter.addItem("축제 즐길때","요즘 여러 축제들이 다시 열리기 시작했는데 다들 마스크 벗고 다니시나요? 벗고 다녀도 되지만 아직 불안해서 ㅜㅜ")
 
 
         // listview에 클릭 이벤트 핸들러 정의.

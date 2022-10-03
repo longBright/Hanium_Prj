@@ -14,13 +14,22 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:gravity="center"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/ma_fia"
+            android:textColor="#ECAC62"
+            android:textSize="36sp"
+            android:id="@+id/mafia_logo"/>
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="자유게시판"
             android:textSize="23dp"
@@ -45,18 +54,20 @@
 
         <Button
             android:id="@+id/board1"
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="#ECAC62"
+            android:gravity="center"
             android:text="자유게시판" />
 
         <Button
             android:id="@+id/board2"
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="#55ECAC62"
+            android:gravity="center"
             android:text="Q&amp;A게시판"
             android:textColor="#909090" />
 
@@ -65,8 +76,7 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="533dp" />
 
 
 </LinearLayout>
