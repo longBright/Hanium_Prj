@@ -120,7 +120,7 @@
         app:layout_constraintTop_toBottomOf="@+id/wearBtn" />
 
     <TextView
-        android:id="@+id/BeforePurchase"
+        android:id="@+id/AfterPurchase"
         android:layout_width="152dp"
         android:layout_height="31dp"
         android:layout_marginStart="220dp"
@@ -132,7 +132,7 @@
         app:layout_constraintVertical_bias="0.242" />
 
     <TextView
-        android:id="@+id/AfterPurchase"
+        android:id="@+id/BeforePurchase"
         android:layout_width="152dp"
         android:layout_height="31dp"
         android:layout_marginStart="28dp"
