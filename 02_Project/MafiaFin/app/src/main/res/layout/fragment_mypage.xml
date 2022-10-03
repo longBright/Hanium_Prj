@@ -370,13 +370,13 @@
                                 android:textStyle="bold" />
 
                             <ImageView
-                                android:id="@+id/warmColor"
+                                android:id="@+id/colorRecommendationImg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 app:srcCompat="@drawable/warm_color" />
 
                             <ImageView
-                                android:id="@+id/mask_kf"
+                                android:id="@+id/shapeRecommendationImg"
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 app:srcCompat="@drawable/kf" />

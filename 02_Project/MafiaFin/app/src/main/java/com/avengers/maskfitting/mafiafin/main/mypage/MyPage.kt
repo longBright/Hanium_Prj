@@ -104,23 +104,31 @@ class MyPage : Fragment() {
             resources.getString(R.string.roundKor) -> {
                 binding.faceShapeTextEng.text = resources.getString(R.string.roundEng)
                 binding.faceShapeImg.setImageResource(R.drawable.round)
+                binding.shapeRecommendationText.text = resources.getString(R.string.ovalRecommendationText)
+                binding.shapeRecommendationImg.setImageResource(R.drawable.dental)
+
             }
 
             resources.getString(R.string.heartKor) -> {
                 binding.faceShapeTextEng.text = resources.getString(R.string.heartEng)
                 binding.faceShapeImg.setImageResource(R.drawable.heart)
+                binding.shapeRecommendationText.text = resources.getString(R.string.heartRecommendationText)
+                binding.shapeRecommendationImg.setImageResource(R.drawable.kf)
             }
 
             resources.getString(R.string.squareKor) -> {
                 binding.faceShapeTextEng.text = resources.getString(R.string.squareEng)
                 binding.faceShapeImg.setImageResource(R.drawable.square)
+                binding.shapeRecommendationText.text = resources.getString(R.string.squareRecommendationText)
+                binding.shapeRecommendationImg.setImageResource(R.drawable.kf)
             }
 
             resources.getString(R.string.ovalKor) -> {
                 binding.faceShapeTextEng.text = resources.getString(R.string.ovalEng)
                 binding.faceShapeImg.setImageResource(R.drawable.oval)
+                binding.shapeRecommendationText.text = resources.getString(R.string.ovalRecommendationText)
+                binding.shapeRecommendationImg.setImageResource(R.drawable.maskbird)    //이미지 교체 필요
             }
-
             else -> "미등록"
         }
 
@@ -131,21 +139,29 @@ class MyPage : Fragment() {
             resources.getString(R.string.springWarmKor) -> {
                 binding.personalColorTextEng.text = resources.getString(R.string.springWarmEng)
                 binding.personalColorImg.setImageResource(R.drawable.springwarm)
+                binding.colorRecommendationText.text = resources.getString(R.string.springWarmRecommendationText)
+                binding.colorRecommendationImg.setImageResource(R.drawable.warm_color)
             }
 
             resources.getString(R.string.autumnWarmKor) -> {
                 binding.personalColorTextEng.text = resources.getString(R.string.autumnWarmEng)
                 binding.personalColorImg.setImageResource(R.drawable.autumnwarm)
+                binding.colorRecommendationText.text = resources.getString(R.string.autumnWarmRecommendationText)
+                binding.colorRecommendationImg.setImageResource(R.drawable.warm_color)
             }
 
             resources.getString(R.string.summerCoolKor) -> {
                 binding.personalColorTextEng.text = resources.getString(R.string.summerCoolEng)
                 binding.personalColorImg.setImageResource(R.drawable.summercool)
+                binding.colorRecommendationText.text = resources.getString(R.string.summerCoolRecommendationText)
+                binding.colorRecommendationImg.setImageResource(R.drawable.cool_color)
             }
 
             resources.getString(R.string.winterCoolKor) -> {
                 binding.personalColorTextEng.text = resources.getString(R.string.winterCoolEng)
                 binding.personalColorImg.setImageResource(R.drawable.wintercool)
+                binding.colorRecommendationText.text = resources.getString(R.string.winterCoolRecommendationText)
+                binding.colorRecommendationImg.setImageResource(R.drawable.cool_color)
             }
 
             else -> "미등록"

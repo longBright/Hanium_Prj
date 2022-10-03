@@ -31,6 +31,12 @@
     <string name="autumnWarmEng">Autumn Warm</string>
     <string name="summerCoolEng">Summer Cool</string>
     <string name="winterCoolEng">Winter Cool</string>
+    <!--추천-->
+    //추후에 더 자세하게 수정
+    <string name="springWarmRecommendationText">따뜻한색</string>
+    <string name="autumnWarmRecommendationText">따뜻한색</string>
+    <string name="summerCoolRecommendationText">차가운색</string>
+    <string name="winterCoolRecommendationText">차가운색</string>
 
     <!-- 얼굴형 종류 -->
     <!-- Kor -->
@@ -43,4 +49,10 @@
     <string name="heartEng">Heart</string>
     <string name="squareEng">Square</string>
     <string name="ovalEng">Oval</string>
+    <!--추천-->
+    <string name="roundRecommendationText">"부리형" 마스크가</string>
+    <string name="heartRecommendationText">"3단 접이식" 마스크가</string>
+    <string name="squareRecommendationText">"부리형" 마스크와 "3단 접이식" 마스크가</string>
+    <string name="ovalRecommendationText">"덴탈"마스크</string>
+
 </resources>
