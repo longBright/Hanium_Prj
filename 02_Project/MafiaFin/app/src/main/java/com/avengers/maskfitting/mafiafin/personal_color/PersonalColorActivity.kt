@@ -26,6 +26,7 @@ import androidx.core.content.FileProvider
 import android.os.Environment
 import android.util.Base64
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
@@ -67,21 +68,33 @@ class PersonalColorActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         init()
+        btn_complete.visibility = View.GONE
         btn_capture!!.setOnClickListener { cameraOpenIntent() }
         btn_gallery!!.setOnClickListener { gallery_open_intent() }
 
-
+        // 검사하기 버튼
         btn_send!!.setOnClickListener {
             progress = ProgressDialog(this@PersonalColorActivity)
             progress!!.setMessage("Uploading...")
             progress!!.show()
-            sendImage(intent.getStringExtra("FaceShape").toString())
+            sendImage()
+            btn_complete.visibility = View.VISIBLE
+        }
+
+        val faceShapeResult = intent.getStringExtra("FaceShape").toString()
+        // 검사완료 버튼
+        btn_complete.setOnClickListener {
+            var intent = Intent(this, PersonalColorOutputActivity::class.java)
+            Log.d("PersonalColorActivity", personalColorResult)
+            intent.putExtra("PersonalColor", personalColorResult)
+            intent.putExtra("FaceShape", faceShapeResult)
+            startActivity(intent)
         }
     }
 
 
     //이미지 플라시크로 전송
-    private fun sendImage(faceShapeResult: String) {
+    private fun sendImage() {
 
         //비트맵 이미지를 byte로 변환 -> base64형태로 변환
         val baos = ByteArrayOutputStream()
@@ -157,13 +170,6 @@ class PersonalColorActivity : AppCompatActivity() {
             DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         )
         queue!!.add(request)
-
-        var intent = Intent(this, PersonalColorOutputActivity::class.java)
-        Log.d("PersonalColorActivity", personalColorResult)
-        intent.putExtra("PersonalColor", personalColorResult)
-        intent.putExtra("FaceShape", faceShapeResult)
-        startActivity(intent)
-
     }
 
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -310,7 +316,7 @@ class PersonalColorActivity : AppCompatActivity() {
             }
             if (photoFile != null) {
                 val providerURI =
-                    FileProvider.getUriForFile(this, "com.example.camera.fileprovider", photoFile)
+                    FileProvider.getUriForFile(this, "com.avengers.maskfitting.camera", photoFile)
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, providerURI)
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
             }
