@@ -33,11 +33,12 @@
 
         <TextView
             android:id="@+id/measuringStationName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_width="162dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="72dp"
+            android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="39sp"
+            android:textSize="35sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/measuringStationName"
@@ -160,15 +161,17 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/measuringStationAddressTextView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/upperDivider" />
+            app:layout_constraintTop_toBottomOf="@+id/upperDivider"
+            app:layout_constraintVertical_bias="0.234" />
 
         <Button
             android:id="@+id/FittingBtn"
             android:layout_width="130dp"
             android:layout_height="39dp"
-            android:text="마스크 착용해보기"
             android:background="@drawable/rectangle_btn"
+            android:text="마스크 착용해보기"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -205,16 +208,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/MaskRecommendation"
+            app:layout_constraintVertical_bias="0.388"
             app:srcCompat="@drawable/dental" />
 
         <TextView
+            android:id="@+id/mafia_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/comfortaa"
             android:text="@string/ma_fia"
             android:textColor="#ECAC62"
             android:textSize="36sp"
-            android:id="@+id/mafia_logo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.101"
             app:layout_constraintLeft_toLeftOf="parent"
