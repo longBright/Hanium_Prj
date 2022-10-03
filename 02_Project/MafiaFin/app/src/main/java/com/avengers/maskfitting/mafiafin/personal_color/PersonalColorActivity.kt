@@ -47,6 +47,8 @@ import java.io.InputStream
 // 이전 액티비티(얼굴형 진단)에서 intent 로 넘어온 값 확인 동작 구현 필요
 class PersonalColorActivity : AppCompatActivity() {
 
+    var personalColorResult : String = ""
+
     private var img: ImageView? = null
     private var btn_capture: Button? = null
     private var btn_gallery: Button? = null
@@ -98,6 +100,7 @@ class PersonalColorActivity : AppCompatActivity() {
             flask_url,
             Response.Listener { response ->
                 progress!!.dismiss()
+                personalColorResult = response
                 when (response) {
                     "1" -> {
                         Toast.makeText(this@PersonalColorActivity, "봄 웜톤", Toast.LENGTH_LONG)
@@ -152,6 +155,12 @@ class PersonalColorActivity : AppCompatActivity() {
             DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         )
         queue!!.add(request)
+
+        var intent = Intent(this, PersonalColorOutputActivity::class.java)
+        Log.d("PersonalColorActivity", personalColorResult)
+        intent.putExtra("PersonalColor", personalColorResult)
+        startActivity(intent)
+
     }
 
     @RequiresApi(Build.VERSION_CODES.Q)

@@ -34,6 +34,10 @@
             android:name=".personal_color.PersonalColorActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".personal_color.PersonalColorOutputActivity"
+            android:exported="true" />
+
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="face" />
