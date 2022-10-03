@@ -8,8 +8,8 @@
     android:orientation="vertical"
     android:weightSum="10"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".main.board.bulletinBoard"
-    tools:showIn="@layout/fragment_board">
+    tools:context=".main.board.qnaBoard"
+    tools:showIn="@layout/fragment_qa_board">
 
     <FrameLayout
         android:layout_width="match_parent"
