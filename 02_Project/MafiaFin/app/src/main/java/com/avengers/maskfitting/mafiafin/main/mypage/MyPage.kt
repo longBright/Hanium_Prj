@@ -101,10 +101,30 @@ class MyPage : Fragment() {
         val faceShape = (activity as MainActivity).preferences.getString("faceShape", "미등록")
         binding.faceShapeTextKor.text = faceShape
         when (faceShape) {
-            resources.getString(R.string.roundKor) -> binding.faceShapeTextEng.text = resources.getString(R.string.roundEng)
-            resources.getString(R.string.heartKor) -> binding.faceShapeTextEng.text = resources.getString(R.string.heartEng)
-            resources.getString(R.string.squareKor) -> binding.faceShapeTextEng.text = resources.getString(R.string.squareEng)
-            resources.getString(R.string.ovalKor) -> binding.faceShapeTextEng.text = resources.getString(R.string.ovalEng)
+            resources.getString(R.string.roundKor) -> {
+                binding.faceShapeTextKor.text = "둥근형"
+                binding.faceShapeTextEng.text = resources.getString(R.string.roundEng)
+                binding.faceShapeImg.setImageResource(R.drawable.round)
+            }
+
+            resources.getString(R.string.heartKor) -> {
+                binding.faceShapeTextKor.text = "하트형"
+                binding.faceShapeTextEng.text = resources.getString(R.string.heartEng)
+                binding.faceShapeImg.setImageResource(R.drawable.heart)
+            }
+
+            resources.getString(R.string.squareKor) -> {
+                binding.faceShapeTextKor.text = "사각형"
+                binding.faceShapeTextEng.text = resources.getString(R.string.squareEng)
+                binding.faceShapeImg.setImageResource(R.drawable.square)
+            }
+
+            resources.getString(R.string.ovalKor) -> {
+                binding.faceShapeTextKor.text = "계란형"
+                binding.faceShapeTextEng.text = resources.getString(R.string.ovalEng)
+                binding.faceShapeImg.setImageResource(R.drawable.oval)
+            }
+
             else -> "미등록"
         }
 
@@ -112,12 +132,34 @@ class MyPage : Fragment() {
         val personalColorKor = (activity as MainActivity).preferences.getString("personalColor", "미등록")
         binding.personalColorTextKor.text = personalColorKor
         when (personalColorKor) {
-            resources.getString(R.string.springWarmKor) -> binding.personalColorTextEng.text = resources.getString(R.string.springWarmEng)
-            resources.getString(R.string.autumnWarmKor) -> binding.personalColorTextEng.text = resources.getString(R.string.autumnWarmEng)
-            resources.getString(R.string.summerCoolKor) -> binding.personalColorTextEng.text = resources.getString(R.string.summerCoolEng)
-            resources.getString(R.string.winterCoolKor) -> binding.personalColorTextEng.text = resources.getString(R.string.winterCoolEng)
+            resources.getString(R.string.springWarmKor) -> {
+                binding.personalColorTextKor.text = "봄 웜톤"
+                binding.personalColorTextEng.text = resources.getString(R.string.springWarmEng)
+                binding.personalColorImg.setImageResource(R.drawable.springwarm)
+            }
+
+            resources.getString(R.string.autumnWarmKor) -> {
+                binding.personalColorTextKor.text = "가을 웜톤"
+                binding.personalColorTextEng.text = resources.getString(R.string.autumnWarmEng)
+                binding.personalColorImg.setImageResource(R.drawable.autumnwarm)
+            }
+
+            resources.getString(R.string.summerCoolKor) -> {
+                binding.personalColorTextKor.text = "여름 쿨톤"
+                binding.personalColorTextEng.text = resources.getString(R.string.summerCoolEng)
+                binding.personalColorImg.setImageResource(R.drawable.summercool)
+            }
+
+            resources.getString(R.string.winterCoolKor) -> {
+                binding.personalColorTextKor.text = "겨울 쿨톤"
+                binding.personalColorTextEng.text = resources.getString(R.string.winterCoolEng)
+                binding.personalColorImg.setImageResource(R.drawable.wintercool)
+            }
+
             else -> "미등록"
         }
+
+
     }
 
     // 사용자 데이터 로드 및 SharedPreferences 에 저장

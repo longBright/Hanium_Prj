@@ -227,11 +227,10 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/warmTone"
+                android:id="@+id/personal_color_img"
                 android:layout_width="150dp"
                 android:layout_height="130dp"
-                android:layout_gravity="center_vertical"
-                app:srcCompat="@drawable/warm" />
+                android:layout_gravity="center_vertical" />
 
             <ImageButton
                 android:id="@+id/button2"
