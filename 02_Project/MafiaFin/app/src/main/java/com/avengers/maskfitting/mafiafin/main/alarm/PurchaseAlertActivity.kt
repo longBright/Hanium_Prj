@@ -17,9 +17,10 @@ import android.R.attr.bitmap
 import android.graphics.drawable.BitmapDrawable
 
 import android.graphics.drawable.Drawable
-
-
-
+import java.text.DateFormat
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class PurchaseAlertActivity : AppCompatActivity() {
@@ -92,9 +93,21 @@ class PurchaseAlertActivity : AppCompatActivity() {
             if (binding.Counter.text == "0") { count = 0 }
         }
 
-        //binding.AfterPurchase.text = (Integer.parseInt(purchaseDate.text as String)+count).toString()
-    }
+        // 구매 예정일 계산
+        val cal = Calendar.getInstance()
+        val df: DateFormat = SimpleDateFormat("yyyy-MM-dd")
 
+        try {
+            cal.time = df.parse(binding.BeforePurchase.text as String?)
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+//        println("cal: " + df.format(cal.time))
+//        println("cal2: " + df.format(cal2.time))
+        cal.add(Calendar.DATE, count)
+
+        binding.AfterPurchase.text = df.format(cal.time)
+    }
 //    companion object {
 //        private const val Search = "마스크"
 //    }
