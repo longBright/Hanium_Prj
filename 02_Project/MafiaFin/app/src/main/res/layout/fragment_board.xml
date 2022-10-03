@@ -1,82 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="10"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".main.board.bulletinBoard"
-    tools:showIn="@layout/fragment_board">
+    tools:context=".main.Board">
 
-    <FrameLayout
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:text="게시판" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/comfortaa"
-            android:text="@string/ma_fia"
-            android:textColor="#ECAC62"
-            android:textSize="36sp"
-            android:id="@+id/mafia_logo"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="자유게시판"
-            android:textSize="23dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/search"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="right|center"
-            android:background="@drawable/search" />
-
-
-    </FrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <Button
-            android:id="@+id/board1"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:background="#ECAC62"
-            android:gravity="center"
-            android:text="자유게시판" />
-
-        <Button
-            android:id="@+id/board2"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:background="#55ECAC62"
-            android:gravity="center"
-            android:text="Q&amp;A게시판"
-            android:textColor="#909090" />
-
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="533dp" />
-
-
-</LinearLayout>
+</FrameLayout>

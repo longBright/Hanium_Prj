@@ -23,7 +23,6 @@ class ListViewAdapter(private val items: MutableList<ListViewItem>): BaseAdapter
         convertView!!.image_title.setImageDrawable(item.icon)
         convertView.text_title.text = item.title
         convertView.text_sub_title.text = item.subTitle
-        convertView.set_alert.text = item.setAlert
 
         return convertView
     }
