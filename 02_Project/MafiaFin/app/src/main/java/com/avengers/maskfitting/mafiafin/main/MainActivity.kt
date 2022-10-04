@@ -22,21 +22,24 @@ class MainActivity : AppCompatActivity() {
     lateinit var mGoogleSignInClient: GoogleSignInClient
     lateinit var preferences: SharedPreferences
     private var email: String? = ""
-    private var 
+    private var hasSigned = false
 
     override fun onStart() {
         super.onStart()
         // 로그인한 사용자 정보
         val account = this.let { GoogleSignIn.getLastSignedInAccount(it) }
-        if (account != null){
+
+        if (account != null && hasSigned != true){
             Toast.makeText(this, "Google 계정을 통해 로그인했습니다.", Toast.LENGTH_SHORT).show()
             Log.d("MainActivity", "${account.email}")
+            hasSigned = true
         }
 
         email = preferences.getString("email", "")
-        if (email != "") {
+        if (email != "" && hasSigned != true) {
             Toast.makeText(this, "Ma!fia 계정을 통해 로그인했습니다.", Toast.LENGTH_SHORT).show()
             Log.d("MainActivity", email.toString())
+            hasSigned = true
         }
     }
 
