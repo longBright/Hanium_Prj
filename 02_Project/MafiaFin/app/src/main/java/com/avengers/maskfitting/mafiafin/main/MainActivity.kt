@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var mGoogleSignInClient: GoogleSignInClient
     lateinit var preferences: SharedPreferences
     private var email: String? = ""
+    private var 
 
     override fun onStart() {
         super.onStart()
