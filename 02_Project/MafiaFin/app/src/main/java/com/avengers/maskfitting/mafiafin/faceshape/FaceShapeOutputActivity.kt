@@ -1,19 +1,14 @@
 package com.avengers.maskfitting.mafiafin.faceshape
 
 import androidx.appcompat.app.AppCompatActivity
-import android.R
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
+
 import android.os.Bundle
-import android.os.Build
 import android.util.Log
-import android.view.Window
-import com.avengers.maskfitting.mafiafin.faceshape.FaceShapeActivity
-import com.avengers.maskfitting.mafiafin.faceshape.FaceContourDetectionProcessor
+import com.avengers.maskfitting.mafiafin.R
+
 import com.avengers.maskfitting.mafiafin.databinding.ActivityFaceShapeOutputBinding
 import com.avengers.maskfitting.mafiafin.personal_color.PersonalColorActivity
-import com.google.ar.core.dependencies.i
 
 class FaceShapeOutputActivity : AppCompatActivity() {
 
@@ -33,10 +28,22 @@ class FaceShapeOutputActivity : AppCompatActivity() {
         binding.faceShape.text = result
 
         when(result){
-            "0" -> binding.faceShape.text = "하트형 얼굴 입니다"
-            "1" -> binding.faceShape.text = "계란형 얼굴 입니다"
-            "2" -> binding.faceShape.text = "둥근형 얼굴 입니다"
-            "3" -> binding.faceShape.text = "사각형 얼굴 입니다"
+            "0" -> {
+                binding.faceShape.text = "하트형 얼굴 입니다"
+                binding.faceShapeImg.setImageResource(R.drawable.heart)
+            }
+            "1" -> {
+                binding.faceShape.text = "계란형 얼굴 입니다"
+                binding.faceShapeImg.setImageResource(R.drawable.oval)
+            }
+            "2" -> {
+                binding.faceShape.text = "둥근형 얼굴 입니다"
+                binding.faceShapeImg.setImageResource(R.drawable.round)
+            }
+            "3" -> {
+                binding.faceShape.text = "사각형 얼굴 입니다"
+                binding.faceShapeImg.setImageResource(R.drawable.square)
+            }
             else -> binding.faceShape.text = "분류된 얼굴형이 없습니다"
         }
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.avengers.maskfitting.mafiafin.R
 import com.avengers.maskfitting.mafiafin.account.RegisterActivity
 import com.avengers.maskfitting.mafiafin.databinding.ActivityPersonalColorOutputBinding
 import com.avengers.maskfitting.mafiafin.main.fitting.FittingActivity
@@ -20,17 +21,29 @@ class PersonalColorOutputActivity : AppCompatActivity() {
         setContentView(view)
 
 
-        val personalColorResult = intent.getStringExtra("PersonalColor").toString() // 숫자
+        var personalColorResult = intent.getStringExtra("PersonalColor").toString() // 숫자
         val faceShapeResult = intent.getStringExtra("FaceShape").toString() // 숫자
         Log.d("퍼스널컬러 진단 결과", personalColorResult)
 
         binding.personalColor.text = personalColorResult
 
         when (personalColorResult) {
-            "1" -> binding.personalColor.text = "봄 웜톤 입니다"
-            "2" -> binding.personalColor.text = "가을 웜톤 입니다"
-            "3" -> binding.personalColor.text = "여름 쿨톤 입니다"
-            "4" -> binding.personalColor.text = "겨울 쿨톤 입니다"
+            "1" -> {
+                binding.personalColor.text = "봄 웜톤 입니다"
+                binding.personalColorImg.setImageResource(R.drawable.springwarm)
+            }
+            "2" -> {
+                binding.personalColor.text = "가을 웜톤 입니다"
+                binding.personalColorImg.setImageResource(R.drawable.autumnwarm)
+            }
+            "3" -> {
+                binding.personalColor.text = "여름 쿨톤 입니다"
+                binding.personalColorImg.setImageResource(R.drawable.summercool)
+            }
+            "4" -> {
+                binding.personalColor.text = "겨울 쿨톤 입니다"
+                binding.personalColorImg.setImageResource(R.drawable.wintercool)
+            }
             else -> binding.personalColor.text = "진단된 퍼스널 컬러가 없습니다"
         }
 

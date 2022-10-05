@@ -17,30 +17,40 @@
         android:text="다음으로"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@id/btn_search" />
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <ImageView
         android:id="@+id/check"
         android:layout_width="match_parent"
         android:layout_height="122dp"
+        android:layout_marginTop="120dp"
         android:src="@drawable/check"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        />
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ImageView
+        android:id="@+id/face_shape_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/oval"
+        app:layout_constraintTop_toBottomOf="@id/check"
+        app:layout_constraintBottom_toTopOf="@id/face_shape"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <TextView
         android:id="@+id/face_shape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="얼굴형 결과"
         android:textAlignment="center"
         android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/check"
+        app:layout_constraintTop_toBottomOf="@+id/face_shape_img"
         />
 
     <TextView
@@ -55,8 +65,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/face_shape"
-        app:layout_constraintVertical_bias="0.022"
-    />
+        app:layout_constraintVertical_bias="0.1"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
