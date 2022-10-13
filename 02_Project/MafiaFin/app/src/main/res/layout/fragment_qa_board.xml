@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="10"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/fragment_qa_board">
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linear1"
         android:gravity="center"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/frame1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,9 +28,9 @@
             android:id="@+id/mafia_logo"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Q&amp;A게시판"
             android:textSize="23dp"
             android:textStyle="bold" />
@@ -48,9 +48,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="horizontal"
-        android:weightSum="2">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame1"
+        android:id="@+id/linear1">
 
         <Button
             android:id="@+id/board1"
@@ -58,9 +60,9 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="#55ECAC62"
+            android:textColor="#909090"
             android:gravity="center"
-            android:text="자유게시판"
-            android:textColor="#909090"/>
+            android:text="자유게시판" />
 
         <Button
             android:id="@+id/board2"
@@ -72,11 +74,26 @@
             android:text="Q&amp;A게시판" />
 
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/list"
+    <ScrollView
+        android:id="@+id/listScrollView"
         android:layout_width="match_parent"
-        android:layout_height="700dp" />
+        android:layout_height="0dp"
+        android:layout_marginTop="3dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/linear1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+        </ListView>
+    </ScrollView>
 
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
