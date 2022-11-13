@@ -62,6 +62,32 @@ class PurchaseAlertActivity : AppCompatActivity() {
 
         // 삭제 버튼 / 정보 삭제
         binding.DeleteBtn.setOnClickListener {
+            val responseListener: Response.Listener<String?> =
+                Response.Listener { response ->
+                    try {
+                        var jsonObject = JSONObject(response)
+                        val success = jsonObject.getBoolean("success")
+                        if (success) {
+                            Toast.makeText(this, "마스크 정보를 삭제했습니다.", Toast.LENGTH_LONG).show()
+
+                            // 메인 화면으로 전환
+                            val intent = Intent(this, MaskAlertMainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(this, "마스크 정보 삭제를 실패했습니다.", Toast.LENGTH_LONG).show()
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(this, "Error", Toast.LENGTH_LONG).show()
+                    }
+                }
+
+            val maskDeleterRequest = MaskDeleteRequest(
+                binding.maskNickname.text.toString(),
+                responseListener
+            )
+            val queue: RequestQueue = Volley.newRequestQueue(this)
+            queue.add(maskDeleterRequest)
         }
 
         // 확인 버튼
@@ -189,4 +215,3 @@ class PurchaseAlertActivity : AppCompatActivity() {
         private const val url = "http://43.200.115.71/MaskDelete.php"
     }
 }
-

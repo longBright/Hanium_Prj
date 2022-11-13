@@ -95,28 +95,28 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <Button
-            android:id="@+id/editMask"
+            android:id="@+id/ReturnBtn"
             android:layout_width="94dp"
             android:layout_height="39dp"
             android:layout_weight="1"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/rectangle_btn"
-            android:text="등록하기"
+            android:text="메인으로"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"/>
 
         <Button
-            android:id="@+id/ReturnBtn"
+            android:id="@+id/editMask"
             android:layout_width="94dp"
             android:layout_height="39dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="25dp"
             android:layout_weight="1"
             android:background="@drawable/rectangle_btn"
-            android:text="메인으로"
+            android:text="등록하기"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
