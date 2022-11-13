@@ -90,21 +90,45 @@ class PurchaseAlertActivity : AppCompatActivity() {
             queue.add(maskDeleterRequest)
         }
 
-        // 확인 버튼
+        // 확인 버튼 / 알림 스위치 및 마스크 개수 갱신
         binding.CloseBtn.setOnClickListener {
-            Log.d("count", count.toString())
             if (setAlert.isChecked()) {
                 editAlert = 1
             }                                                   // 알람 스위치 setting
             else {
                 editAlert = 0
             }
-            println(editAlert)
 
-            // 메인 화면으로 전환
-            val intent = Intent(this, MaskAlertMainActivity::class.java)
-            startActivity(intent)
+            val responseListener: Response.Listener<String?> =
+                Response.Listener { response ->
+                    try {
+                        var jsonObject = JSONObject(response)
+                        val success = jsonObject.getBoolean("success")
+                        if (success) {
+                            Toast.makeText(this, "확인", Toast.LENGTH_LONG).show()
+
+                            // 메인 화면으로 전환
+                            val intent = Intent(this, MaskAlertMainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(this, "마스크 정보 수정 실패", Toast.LENGTH_LONG).show()
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
+                    }
+                }
+
+            val maskEditRequest = MaskEditRequest(
+                binding.maskNickname.text.toString(),
+                count,
+                editAlert,
+                responseListener
+            )
+            val queue: RequestQueue = Volley.newRequestQueue(this)
+            queue.add(maskEditRequest)
         }
+
 
         //var alert = ""
         //var count = 0
