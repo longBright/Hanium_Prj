@@ -19,6 +19,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.Volley
 import com.avengers.maskfitting.mafiafin.R
 import com.avengers.maskfitting.mafiafin.databinding.ActivityMaskRegisterationBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import org.json.JSONObject
@@ -26,6 +27,7 @@ import org.json.JSONObject
 class MaskRegisterationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMaskRegisterationBinding
     private lateinit var preferences: SharedPreferences
+    private var email: String? = ""
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,9 +36,19 @@ class MaskRegisterationActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // preferences를 통해 userEmail 값 전달 받음
-        preferences = getSharedPreferences("userEmail", MODE_PRIVATE)
-        val email = preferences.getString("email", "").toString()
+        val account = this.let { GoogleSignIn.getLastSignedInAccount(it) }
+        if (account == null) {
+            // 로그인 중인 사용자 정보 획득
+            // preferences를 통해 userEmail 값 전달 받음
+            preferences = getSharedPreferences("userEmail", MODE_PRIVATE)
+            email = preferences.getString("email", "").toString()
+            //Toast.makeText(this, email, Toast.LENGTH_SHORT).show()
+        }
+        // 구글 회원
+        else {
+            email = account?.email      // 사용자 이메일 초기화
+            //Toast.makeText(this, email, Toast.LENGTH_SHORT).show()
+        }
 
         // 마스크 종류/타입 스피너
         val itemList = listOf("마스크 타입을 고르세요.", "덴탈 마스크", "KF 80", "KF 94")
@@ -137,16 +149,18 @@ class MaskRegisterationActivity : AppCompatActivity() {
                         }
                     }
 
-                val maskRegisterRequest = MaskRegisterRequest(
-                    binding.maskName.text.toString(),
-                    binding.maskNickname.text.toString(),
-                    email,
-                    binding.beforePurchaseDate.text.toString(),
-                    binding.maskCounter.text,
-                    binding.maskType.selectedItem.toString(),
-                    alert,
-                    responseListener
-                )
+                val maskRegisterRequest = email?.let {
+                    MaskRegisterRequest(
+                        binding.maskName.text.toString(),
+                        binding.maskNickname.text.toString(),
+                        it,
+                        binding.beforePurchaseDate.text.toString(),
+                        binding.maskCounter.text,
+                        binding.maskType.selectedItem.toString(),
+                        alert,
+                        responseListener
+                    )
+                }
                 val queue: RequestQueue = Volley.newRequestQueue(this)
                 queue.add(maskRegisterRequest)
             }

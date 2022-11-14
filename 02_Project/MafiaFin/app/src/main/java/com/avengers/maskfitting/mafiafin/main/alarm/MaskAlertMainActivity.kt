@@ -23,11 +23,13 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 
 
 class MaskAlertMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMaskAlertListBinding
     private lateinit var preferences: SharedPreferences
+    private var email: String? = ""
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,10 +38,19 @@ class MaskAlertMainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // preferences를 통해 userEmail 값 전달 받음
-        preferences = getSharedPreferences("userEmail", MODE_PRIVATE)
-        val email = preferences.getString("email", "").toString()
-        //Toast.makeText(this, email, Toast.LENGTH_SHORT).show()    // login email check
+        val account = this.let { GoogleSignIn.getLastSignedInAccount(it) }
+        if (account == null) {
+            // 로그인 중인 사용자 정보 획득
+            // preferences를 통해 userEmail 값 전달 받음
+            preferences = getSharedPreferences("userEmail", MODE_PRIVATE)
+            email = preferences.getString("email", "").toString()
+            //Toast.makeText(this, email, Toast.LENGTH_SHORT).show()
+        }
+        // 구글 회원
+        else {
+            email = account?.email      // 사용자 이메일 초기화
+            //Toast.makeText(this, email, Toast.LENGTH_SHORT).show()
+        }
 
         // 마스크 등록 버튼
         binding.editMask.setOnClickListener {
@@ -157,10 +168,12 @@ class MaskAlertMainActivity : AppCompatActivity() {
                 }
                 progressBar.visibility = View.INVISIBLE
             }
-        val maskDataListRequest = MaskDataListRequest(
-            email,
-            responseListener
-        )
+        val maskDataListRequest = email?.let {
+            MaskDataListRequest(
+                it,
+                responseListener
+            )
+        }
 
         val queue: RequestQueue = Volley.newRequestQueue(this)
         queue.add(maskDataListRequest)
