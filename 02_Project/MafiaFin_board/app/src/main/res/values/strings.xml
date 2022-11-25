@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">MafiaFin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ma_">Ma!</string>
+    <string name="ma_fia">Ma!fia</string>
+
+    <!-- 마!피아 -->
+    <string name="splash_1">
+
+    \u00EB\u00A7\u0088!\u00ED\u0094\u00BC\u00EC\u0095\u0084
+    </string>
+
+    <!-- M a ! f i a -->
+    <string name="m_a_f_i_a">
+
+    M a ! f i a
+    </string>
+
+    <!-- 구글 로그인 용 server_client_id -->
+    <string name="server_client_id">221945105069-sojcbs9tt0uekqt28uo1uj8gkfqam1o4.apps.googleusercontent.com</string>
+
+    <!-- 퍼스널 컬러 종류 -->
+    <!-- Kor -->
+    <string name="springWarmKor">봄 웜톤</string>
+    <string name="autumnWarmKor">가을 웜톤</string>
+    <string name="summerCoolKor">여름 쿨톤</string>
+    <string name="winterCoolKor">겨울 쿨톤</string>
+    <!-- Eng -->
+    <string name="springWarmEng">Spring Warm</string>
+    <string name="autumnWarmEng">Autumn Warm</string>
+    <string name="summerCoolEng">Summer Cool</string>
+    <string name="winterCoolEng">Winter Cool</string>
+    <!--추천-->
+    //추후에 더 자세하게 수정
+    <string name="springWarmRecommendationText">따뜻한색</string>
+    <string name="autumnWarmRecommendationText">따뜻한색</string>
+    <string name="summerCoolRecommendationText">차가운색</string>
+    <string name="winterCoolRecommendationText">차가운색</string>
+
+    <!-- 얼굴형 종류 -->
+    <!-- Kor -->
+    <string name="roundKor">둥근형</string>
+    <string name="heartKor">하트형</string>
+    <string name="squareKor">사각형</string>
+    <string name="ovalKor">계란형</string>
+    <!-- Eng -->
+    <string name="roundEng">Round</string>
+    <string name="heartEng">Heart</string>
+    <string name="squareEng">Square</string>
+    <string name="ovalEng">Oval</string>
+    <!--추천-->
+    <string name="roundRecommendationText">"부리형" 마스크가</string>
+    <string name="heartRecommendationText">"3단 접이식" 마스크가</string>
+    <string name="squareRecommendationText">"부리형" 마스크와 "3단 접이식" 마스크가</string>
+    <string name="ovalRecommendationText">"덴탈"마스크</string>
+
+</resources>
