@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="personalcolourList">
+        <item>퍼스널컬러 선택</item>
+        <item>선택안함</item>
+        <item>봄 웜톤</item>
+        <item>여름 쿨톤</item>
+        <item>가을 웜톤</item>
+        <item>겨울 쿨톤</item>
+    </string-array>
+
+</resources>
