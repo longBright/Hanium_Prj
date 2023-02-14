@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/bulletinBoard">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -81,7 +82,7 @@
         android:layout_marginTop="3dp"
         android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@+id/linear1"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/contentBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -94,5 +95,19 @@
         </ListView>
     </ScrollView>
 
+    <Button
+        android:id="@+id/contentBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text= "+"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/board_btn"
+        app:layout_constraintTop_toBottomOf="@+id/listScrollView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -104,6 +104,12 @@
             android:name=".main.alarm.PurchaseAlertActivity"
             android:exported="true" />
         <activity
+            android:name=".main.board.bulletinBoard.BulletinBoardRegisterationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".main.board.qnaBoard.QnABoardRegisterationActivity"
+            android:exported="true" />
+        <activity
             android:name=".main.SplashActivity"
             android:exported="true">
             <intent-filter>
