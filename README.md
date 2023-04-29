@@ -2,7 +2,7 @@
 얼굴형, 퍼스널 컬러, 날씨별 마스크를 추천하고, 가상착용 기술을 겸비한 개인 맞춤형 마스크 추천 및 관리 서비스
 
 ## 1. 개발환경 및 사용 라이브러리
-OS : Window 10, Ubuntu 22.04 LTS
+OS : Window 10, Ubuntu 22.04 LTS (AWS EC2 Server)
 Language : Kotlin, Python
 Framework : Android
 DBMS : MySQL
@@ -32,3 +32,10 @@ DBMS : MySQL
 
 
 ![image](https://user-images.githubusercontent.com/74171272/235288641-2cce8685-d6bc-43fb-ae94-bb750d3bb40b.png)
+
+## 4. 결과
+- 2022 한이음 ICT 공모전 입선 수상
+- 한이음 공모전 수행 기간 동안 배포
+
+## 상세 보고서 및 설계서
+https://github.com/longBright/Hanium_Prj/tree/main/01_Documents/01_%EB%B3%B4%EA%B3%A0%EC%84%9C/05_%EA%B0%9C%EB%B0%9C%EB%B3%B4%EA%B3%A0(2%EC%B0%A8)
