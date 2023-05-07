@@ -2,10 +2,10 @@
 얼굴형, 퍼스널 컬러, 날씨별 마스크를 추천하고, 가상착용 기술을 겸비한 개인 맞춤형 마스크 추천 및 관리 서비스
 
 ## 1. 개발환경 및 사용 라이브러리
-OS : Window 10, Ubuntu 22.04 LTS (AWS EC2 Server)
-Language : Kotlin, Python
-Framework : Android
-DBMS : MySQL
+OS : Window 10, Ubuntu 22.04 LTS (AWS EC2 Server) <br>
+Language : Kotlin, Python <br>
+Framework : Android <br>
+DBMS : MySQL <br>
 
 ## 2. 구성도
 ![image](https://user-images.githubusercontent.com/74171272/235288327-4be73e4c-9b51-4e00-a607-0552cbb0825a.png)
