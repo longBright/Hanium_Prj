@@ -4,7 +4,7 @@ This is Personal color diagnosis system.
 [![Personal Color Diagnosis system](http://img.youtube.com/vi/K7esg_dXYGo/0.jpg)](http://www.youtube.com/watch?v=K7esg_dXYGo "Personal Color Diagnosis system")
 <br>**Click this image to see the Demo video!**
 ## Caution
-This source code only covers personal color diagnosis. It doesn't have web framework, white balance adjust, and virtual makeup code. It is because I only contributed the personal color diagnosis feature in this team project!<br><br>
+This source code only covers personal color diagnosis. <br><br>
 이 소스코드는 퍼스널 컬러 진단 기능만 다룹니다. 
 ## Usage
 First of all, `git clone` to download the source code.
