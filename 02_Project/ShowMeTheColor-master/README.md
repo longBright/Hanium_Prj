@@ -5,8 +5,7 @@ This is Personal color diagnosis system.
 <br>**Click this image to see the Demo video!**
 ## Caution
 This source code only covers personal color diagnosis. It doesn't have web framework, white balance adjust, and virtual makeup code. It is because I only contributed the personal color diagnosis feature in this team project!<br><br>
-이 소스코드는 퍼스널 컬러 진단 기능만 다룹니다. 데모에서 보여드린 것처럼 웹 프레임워크나 화이트 밸런스 조정 기능, 그리고 가상 메이크업 시뮬레이션 코드는 없습니다. 팀 프로젝트에서 제 파트가 아니었거든요!
-
+이 소스코드는 퍼스널 컬러 진단 기능만 다룹니다. 
 ## Usage
 First of all, `git clone` to download the source code.
 
